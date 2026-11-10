@@ -274,6 +274,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .dpol{fill:var(--q-pol-bg);stroke:var(--q-pol);stroke-width:2}.dpolc{fill:var(--surface);stroke:var(--q-pol);stroke-width:1.2}.dpolk{fill:var(--surface);stroke:var(--q-pol);stroke-width:2.6}.dpt{fill:var(--q-pol);font-family:var(--f-display);font-weight:700;font-size:21px}.dpc{fill:var(--q-pol);font-family:var(--f-display);font-weight:600;font-size:14.5px}
 .dpin{fill:#E5484D;stroke:var(--surface);stroke-width:2}.dpinn{fill:#fff;font-family:var(--f-display);font-weight:700;font-size:13px}.pins{list-style:none;margin:12px auto 0;padding:0;max-width:860px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;font-size:.9rem}.pins li{display:flex;gap:8px;align-items:flex-start}.pins svg.pinic{flex:none;width:20px!important;min-width:0!important;height:29px!important;margin:-2px 0 0!important;display:block}.pins .pinic text{font-size:13px}.pins li span{min-width:0}@media (max-width:640px){.pins{grid-template-columns:1fr}}
 .role.wide .figs.pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:start}#dg2 svg{min-width:0!important}@media (max-width:900px){.role.wide .figs.pair{grid-template-columns:1fr!important}}
+.bmt{display:flex;align-items:stretch;gap:10px;margin-top:4px}.bmt .stage{flex:1;min-width:0;padding:12px 14px;border-width:1.5px}.bmt-ar{align-self:center;flex:none;font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:var(--navy);letter-spacing:-.08em}@media (max-width:640px){.bmt{flex-direction:column}.bmt-ar{transform:rotate(90deg)}}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -348,9 +349,11 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
       <blockquote class="duty">ประสานงานกับ VP, CEO-RS และ C-Level เพื่อพัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ) ให้สอดคล้องกับ Vision และ Corporate Objectives · ร่วมพัฒนาแผนธุรกิจที่มุ่งเปลี่ยน Business Model จาก Industrial Capitalism → Platform Capitalism → Ecosystem Capitalism · พัฒนาแนวทาง Wealth Creation ของกลุ่มบริษัท 2 แนวทาง · ทั้งหมดนำเสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ</blockquote>
       <div>
         <div class="eyebrow" style="margin-bottom:6px">เส้นทางการเปลี่ยนผ่าน Business Model</div>
-        <div class="track" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div class="bmt">
           <div class="stage in"><b>Industrial Capitalism</b>Product = Asset</div>
+          <span class="bmt-ar" aria-hidden="true">&gt;&gt;</span>
           <div class="stage in"><b>Platform Capitalism</b>Platform = Asset</div>
+          <span class="bmt-ar" aria-hidden="true">&gt;&gt;</span>
           <div class="stage in"><b>Ecosystem Capitalism</b>Ecosystem = Advantage</div>
         </div>
       </div>
