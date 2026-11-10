@@ -399,7 +399,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 
   <div class="role subrole">
     <div class="rtext">
-      <div class="rnum"><span class="n">1.2</span><h3>Strategy Communication, Monitoring &amp; Review</h3><span class="qtag str">Strategy formulation</span></div>
+      <div class="rnum"><span class="n">1.2</span><h3>Strategy Communication &amp; Review</h3><span class="qtag str">Strategy formulation</span></div>
       <blockquote class="duty">ถ่ายทอด Corporate Strategy ที่อนุมัติแล้วไปสู่ Business Level และ Functional Level Strategy พร้อมเป้าหมาย แผนงาน งบประมาณ ตัวชี้วัด · ติดตามผลการดำเนินงานเทียบกับกลยุทธ์ (Strategic Review) เพื่อระบุ Non-realized Strategies ประเมิน Emerging Strategies ระหว่างการดำเนินงาน และเสนอปรับกลยุทธ์ให้สอดคล้องกับสถานการณ์</blockquote>
       <ul class="link-list">
         <li><span><b>Levels of Strategy</b> คือโครงสร้างการถ่ายทอด: Head Office (Corporate) → Division (Business) → Business Functions (Functional)</span></li>
@@ -527,7 +527,7 @@ const Q={
     map:"ภาพ Tricker Model"}
 };
 
-const TT={'1.1':'Business Model Transformation & Wealth Creation','1.2':'Strategy Communication, Monitoring & Review','2.1':'Policy Making & Management Techniques','2.2':'Platform Development','3.1':'Performance Monitoring','4.1':'Reporting Integrity & Transparency','4.2':'Audit Support'};
+const TT={'1.1':'Business Model Transformation & Wealth Creation','1.2':'Strategy Communication & Review','2.1':'Policy Making & Management Techniques','2.2':'Platform Development','3.1':'Performance Monitoring','4.1':'Reporting Integrity & Transparency','4.2':'Audit Support'};
 function groupPres(list){const g=[];list.forEach(x=>{const m=x.match(/^ข้อ (\d)(\.\d)?\s+/);const ref=m?m[1]+(m[2]||''):'';const t=m?x.slice(m[0].length):x;const l=g[g.length-1];if(l&&l.ref===ref)l.items.push(t);else g.push({ref,sec:m?m[1]:'',items:[t]});});return g;}
 document.querySelectorAll('.q').forEach(b=>{const ql=b.querySelector('.ql');if(!ql)return;const esc=x=>x.replace(/&/g,'&amp;');ql.innerHTML=groupPres(Q[b.dataset.q].short||Q[b.dataset.q].pres).map(g=>`<span class="grp" data-ref="${g.ref}" role="button" tabindex="0"><a class="ref" href="#r${g.sec}">ข้อ ${g.ref} · ${esc(TT[g.ref]||'')}</a>${g.items.map(t=>`<span class="li">${esc(t)}</span>`).join('')}</span>`).join('');});
 const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
