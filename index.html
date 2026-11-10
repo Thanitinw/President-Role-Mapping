@@ -274,7 +274,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .dpol{fill:var(--q-pol-bg);stroke:var(--q-pol);stroke-width:2}.dpolc{fill:var(--surface);stroke:var(--q-pol);stroke-width:1.2}.dpolk{fill:var(--surface);stroke:var(--q-pol);stroke-width:2.6}.dpt{fill:var(--q-pol);font-family:var(--f-display);font-weight:700;font-size:21px}.dpc{fill:var(--q-pol);font-family:var(--f-display);font-weight:600;font-size:14.5px}
 .dpin{fill:#E5484D;stroke:var(--surface);stroke-width:2}.dpinn{fill:#fff;font-family:var(--f-display);font-weight:700;font-size:13px}.pins{list-style:none;margin:12px auto 0;padding:0;max-width:860px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;font-size:.9rem}.pins li{display:flex;gap:8px;align-items:flex-start}.pins svg.pinic{flex:none;width:20px!important;min-width:0!important;height:29px!important;margin:-2px 0 0!important;display:block}.pins .pinic text{font-size:13px}.pins li span{min-width:0}@media (max-width:640px){.pins{grid-template-columns:1fr}}
 .role.wide .figs.pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:start}#dg2 svg{min-width:0!important}@media (max-width:900px){.role.wide .figs.pair{grid-template-columns:1fr!important}}
-.bmt{display:flex;align-items:stretch;gap:10px;margin-top:4px}.bmt .stage{flex:1;min-width:0;padding:12px 14px;border-width:1.5px}.bmt-ar{align-self:center;flex:none;font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:var(--navy);letter-spacing:-.08em}@media (max-width:640px){.bmt{flex-direction:column}.bmt-ar{transform:rotate(90deg)}}
+.bmt{display:flex;align-items:stretch;gap:10px;margin-top:4px}.bmt .stage{flex:1;min-width:0;padding:12px 14px;border-width:1.5px}.bmt-ar{align-self:center;flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--surface);box-shadow:0 2px 6px rgba(0,0,0,.12)}.bmt-ar svg{width:24px;height:16px;display:block}@media (max-width:640px){.bmt{flex-direction:column}.bmt-ar{transform:rotate(90deg)}}
 .cm-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start;margin-top:18px}.cm-pair>.cm-dg,.cm-pair>.cm-imgs{margin-top:0}.cm-pair .cm-imgs{grid-template-columns:1fr}#cmodal .cm-pair .cm-imgs figure img{height:auto!important}.cm-pair .cm-dg svg{min-width:0!important}@media (max-width:900px){.cm-pair{grid-template-columns:1fr}}
 .dpill{fill:var(--surface);stroke:var(--q-pol);stroke-width:1}.dpillt{fill:var(--ink);font-size:12.5px;font-weight:600}.dpillm{fill:var(--muted);font-weight:400}.dkey{fill:var(--q-pol);font-family:var(--f-display);font-weight:700;font-size:13px}
 .dpth{fill:var(--muted);font-size:11.5px}
@@ -354,9 +354,9 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
         <div class="eyebrow" style="margin-bottom:6px">เส้นทางการเปลี่ยนผ่าน Business Model</div>
         <div class="bmt">
           <div class="stage in"><b>Industrial Capitalism</b>Product = Asset</div>
-          <span class="bmt-ar" aria-hidden="true">&gt;&gt;</span>
+          <span class="bmt-ar" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M3 12 H31" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M24 5 L33 12 L24 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="stage in"><b>Platform Capitalism</b>Platform = Asset</div>
-          <span class="bmt-ar" aria-hidden="true">&gt;&gt;</span>
+          <span class="bmt-ar" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M3 12 H31" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M24 5 L33 12 L24 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="stage in"><b>Ecosystem Capitalism</b>Ecosystem = Advantage</div>
         </div>
       </div>
