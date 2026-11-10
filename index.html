@@ -314,6 +314,9 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .clickhint{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:8px 12px;border-radius:8px;background:var(--navy-soft);color:var(--navy);font-size:.9rem;font-weight:500}
 .cm-foot{margin-top:22px;padding-top:14px;border-top:1px dashed var(--line);font-size:.9rem;color:var(--muted)}.cm-foot-h{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;margin-bottom:6px;color:var(--muted)}.cm-foot .link-list{margin:0}.cm-foot .link-list li,.cm-foot p{color:var(--muted);font-size:.9rem;margin:0}.cm-foot b{color:var(--ink)}
 .q .qn{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.q .qn .go{font:inherit;cursor:pointer}.q .qn .go{margin-left:auto;display:inline-flex;align-items:center;gap:3px;font-family:var(--f-body);font-size:.78rem;font-weight:600;padding:3px 11px 3px 12px;border-radius:999px;border:1px solid currentColor;background:var(--surface);white-space:nowrap}.q .qn .go:hover{transform:translateX(2px)}.q.acc .qn .go{color:var(--ink)}
+.cmp{margin-top:14px}.cmp>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-weight:600;font-size:.95rem;text-decoration:underline;text-underline-offset:3px}
+.cmp>summary::-webkit-details-marker{display:none}.cmp>summary::after{content:"›";display:inline-block;transition:transform .15s;text-decoration:none}.cmp[open]>summary::after{transform:rotate(90deg)}
+.cmp[open]>summary{margin-bottom:12px}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -328,6 +331,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
   <div class="eyebrow">บทบาทหน้าที่ President · วิเคราะห์เชื่อมโยงกับภาพประกอบ 9 ภาพ</div>
   <h1>President &amp; Group COO</h1>
   <p class="lede">Tricker Model เป็นกรอบของคณะกรรมการ ไม่ใช่ของ President โดยตรง President จึงนำโมเดลมาประยุกต์เพื่อสร้าง Group Management Mechanism ที่ขับเคลื่อนกลยุทธ์และรายงานผลกลับไปยัง Board</p>
+  <details class="cmp"><summary>ดูการแบ่งบทบาท Board กับ President &amp; Group COO</summary>
   <div class="split">
     <div class="side">
       <div class="eyebrow">Board of Directors</div>
@@ -343,6 +347,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
       <div class="chips"><span class="chip">พัฒนา/เสนอกลยุทธ์</span><span class="chip">พัฒนานโยบาย + Platform</span><span class="chip">ติดตาม + รายงาน</span></div>
     </div>
   </div>
+  </details>
 </div></header>
 
 <main>
