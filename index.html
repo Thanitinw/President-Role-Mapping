@@ -317,6 +317,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .cmp{margin-top:14px}.cmp>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-weight:600;font-size:.95rem;text-decoration:underline;text-underline-offset:3px}
 .cmp>summary::-webkit-details-marker{display:none}.cmp>summary::after{content:"›";display:inline-block;transition:transform .15s;text-decoration:none}.cmp[open]>summary::after{transform:rotate(90deg)}
 .cmp[open]>summary{margin-bottom:12px}
+.tlinkp{margin:0 0 6px;text-align:right}.tlink{all:unset;cursor:pointer;color:var(--navy);font-size:.88rem;font-weight:500;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;gap:4px}.tlink:hover{opacity:.8}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -357,9 +358,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
     <h2>4 ช่องของ Tricker Model กับงานที่ President &amp; Group COO รับมาประยุกต์</h2>
   </div>
   <div class="tricker">
-    <div class="figs">
-      <figure><button data-zoom="img/tricker.jpg" aria-label="ขยายภาพ Tricker Model"><img src="img/tricker.jpg" alt="ตาราง Tricker Model ฉบับเต็ม แสดงรายละเอียดบทบาท Board ทั้ง 4 ช่อง" loading="lazy"></button><figcaption>Tricker Model (ฉบับรายละเอียด).jpg · กดเพื่อขยาย</figcaption></figure>
-    </div>
+    <p class="tlinkp"><button type="button" class="tlink" id="tview">ดูภาพ Tricker Model ของ Board ฉบับเต็ม <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></p>
     <div class="tmatrix">
       <div class="matrix" role="group" aria-label="Tricker Model">
         <span style="grid-column:2;grid-row:1" class="ax">Conformance focus</span><span style="grid-column:3;grid-row:1" class="ax">Performance focus</span>
@@ -463,6 +462,7 @@ const w=document.createElement('div');w.className='wl';
 w.innerHTML='<div class="wl-h"><b>สรุปภาระงาน</b><span>4 ข้อหลัก · '+subs+' ข้อย่อย · '+tot+' ภาระงาน</span></div><div class="wl-bar">'+order.map(k=>'<span class="wl-s wl-'+k+'" style="flex:'+st[k].task+'" title="'+Q[k].name+'">'+st[k].task+'</span>').join('')+'</div><div class="wl-lg">'+order.map(k=>'<span><i class="wl-d wl-'+k+'"></i>'+Q[k].name.replace('&','&amp;')+' <b>'+st[k].task+'</b> <em>('+Math.round(st[k].task*100/tot)+'%)</em></span>').join('')+'</div>';
 const tm=document.querySelector('.tmatrix');const mono=tm&&tm.querySelector('p.mono');if(tm)tm.insertBefore(w,mono)})();
 document.querySelectorAll('nav.top a[data-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openClause(a.dataset.open)}));
+(()=>{const t=document.getElementById('tview');if(t)t.addEventListener('click',()=>{zi.src='img/tricker.jpg';zi.alt='ตาราง Tricker Model ฉบับเต็ม';dlg.showModal()})})();
 const fd=document.getElementById('findings');
 document.getElementById('fopen').addEventListener('click',()=>fd.showModal());
 document.getElementById('fclose').addEventListener('click',()=>fd.close());
