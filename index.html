@@ -270,6 +270,7 @@ dialog::backdrop{background:rgba(5,10,18,.82)}
 dialog img{display:block;max-width:96vw;max-height:88vh;width:auto;height:auto;background:#fff;border-radius:6px}
 dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));font:600 .9rem var(--f-body);background:#fff;color:#14202E;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.role.wide{grid-template-columns:1fr!important}.role.wide .figs{grid-template-columns:1fr!important}.role.wide .figs img{width:100%;height:auto;max-height:none}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -405,17 +406,17 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
     </div>
   </div>
 
-  <div class="role subrole">
+  <div class="role subrole wide">
     <div class="rtext">
       <div class="rnum"><span class="n">2.2</span><h3>Platform Development</h3><span class="qtag pol">Policy making</span></div>
       <blockquote class="duty">พัฒนา 6 Revenue Stream Type Platform เชื่อมโยงกับ 5 Digital Architecture Model บูรณาการ Resources &amp; Capabilities, Systems และ Work Processes ภายใต้กรอบ Management Techniques ข้อ 2.1</blockquote>
       <ul class="link-list">
-        <li><span><b>5 Digital Architecture Model</b> คือกรอบสถาปัตยกรรมดิจิทัลแบบหลายชั้น (Business, Function, Information, Communication, Component/Asset) ที่ใช้ออกแบบ Platform ตามอุตสาหกรรม เช่น Smart Grid (SGAM), Smart Farming (SFAM), Industry 4.0 (RAMI 4.0) และ Smart City (SCIAM)</span></li>
+        <li><span><b>5 Digital Architecture Model</b> คือกรอบสถาปัตยกรรมดิจิทัลแบบหลายชั้น (Business, Function, Information, Communication, Component/Asset) ที่ใช้ออกแบบ Platform ตามอุตสาหกรรม ได้แก่ SGAM (ระบบไฟฟ้าและสมาร์ทกริด), SCIAM (เมืองอัจฉริยะ), SFAM (เกษตรและชีวมวล), RAMI 4.0 (โรงงานและการผลิต) และ ACDCAM (AI-Cloud และ Data Center)</span></li>
         <li><span>Management Architecture Model ในข้อ 2.1 เป็นฐานที่ Platform ในข้อ 2.2 วางลงไป</span></li>
       </ul>
     </div>
     <div class="figs">
-      <figure><button data-zoom="img/5dam.jpg" aria-label="ขยายภาพ 5 Digital Architecture Model"><img src="img/5dam.jpg" alt="Digital Architecture Model: SGAM, SFAM, RAMI 4.0 และ SCIAM" loading="lazy"></button><figcaption>5 Digital Architect Model.png</figcaption></figure>
+      <figure><button data-zoom="img/5dam.jpg" aria-label="ขยายภาพ 5 Digital Architecture Model"><img src="img/5dam.jpg" alt="5 Digital Architecture Model: SGAM, SCIAM, SFAM, RAMI 4.0 และ ACDCAM" loading="lazy"></button><figcaption>5 Digital Architect Model.png</figcaption></figure>
     </div>
   </div>
 </div></section>
@@ -507,7 +508,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
     <p>ข้อเสนอเพื่อปรับปรุงเอกสาร เรียงจากประเด็นเนื้อหาไปถึงการพิมพ์</p>
   </div>
   <div class="findings">
-    <div class="find"><span class="lvl">เนื้อหา</span><h3>ยังไม่มีภาพหรือคำนิยามของ “6 Revenue Stream Type”</h3><p>ข้อ 2.2 มีภาพ 5 Digital Architecture Model แล้ว แต่ภาพแสดง 4 โมเดล (SGAM, SFAM, RAMI 4.0, SCIAM) ควรระบุโมเดลที่ 5 และยังไม่มีรายการ 6 Revenue Stream Type ประกอบ</p></div>
+    <div class="find"><span class="lvl">เนื้อหา</span><h3>ยังไม่มีภาพหรือคำนิยามของ “6 Revenue Stream Type”</h3><p>ข้อ 2.2 มีภาพ 5 Digital Architecture Model ครบแล้ว แต่ยังไม่มีรายการหรือภาพ 6 Revenue Stream Type ประกอบ</p></div>
   </div>
 </div></dialog>
 </main>
