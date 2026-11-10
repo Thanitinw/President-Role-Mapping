@@ -293,6 +293,15 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .dgps{fill:var(--q-mon);font-size:12.5px}
 .fln2{stroke-width:3.5;stroke-dasharray:8 6}.fsub2{fill:var(--muted);font-size:12px}
 [hidden]{display:none!important}
+.qc{align-self:flex-start;font-family:var(--f-mono);font-size:.74rem;padding:2px 9px;border-radius:999px;background:var(--surface);border:1px solid currentColor;opacity:.9}
+.q.str .qc{color:var(--q-str)}.q.pol .qc{color:var(--q-pol)}.q.mon .qc{color:var(--q-mon)}.q.acc .qc{color:var(--ink)}
+.wl{margin-top:14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;display:grid;gap:10px}
+.wl-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}.wl-h b{font-family:var(--f-display);font-size:1rem}.wl-h span{font-size:.88rem;color:var(--muted)}
+.wl-bar{display:flex;height:30px;border-radius:8px;overflow:hidden;gap:2px}
+.wl-s{display:grid;place-items:center;color:#fff;font-weight:700;font-size:.85rem;min-width:28px}
+.wl-str{background:var(--q-str)}.wl-pol{background:var(--q-pol)}.wl-mon{background:var(--q-mon)}.wl-acc{background:var(--q-acc)}
+.wl-lg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84rem;color:var(--ink)}.wl-lg span{display:inline-flex;align-items:center;gap:6px}.wl-lg em{font-style:normal;color:var(--muted)}
+.wl-d{width:10px;height:10px;border-radius:3px;display:inline-block}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -542,6 +551,13 @@ cm.addEventListener('click',e=>{if(e.target===cm)cm.close()});
 document.querySelectorAll('.ql .grp').forEach(g=>{const go=e=>{e.preventDefault();openClause(g.dataset.ref)};g.addEventListener('click',go);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')go(e)});});
 document.getElementById('zclose').addEventListener('click',()=>dlg.close());
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+(function(){const order=['str','pol','mon','acc'];const st={};order.forEach(k=>st[k]={sub:0,task:0});
+Object.entries(CL).forEach(([r,c])=>{if(st[c.q]){st[c.q].sub++;st[c.q].task+=c.b.length}});
+const tot=order.reduce((a,k)=>a+st[k].task,0),subs=order.reduce((a,k)=>a+st[k].sub,0);
+document.querySelectorAll('.q[data-q]').forEach(b=>{const k=b.dataset.q;if(!st[k])return;const n=b.querySelector('.qn');const c=document.createElement('span');c.className='qc';c.textContent=st[k].sub+' ข้อย่อย · '+st[k].task+' ภาระงาน';n.after(c)});
+const w=document.createElement('div');w.className='wl';
+w.innerHTML='<div class="wl-h"><b>สรุปภาระงาน President</b><span>4 ข้อหลัก · '+subs+' ข้อย่อย · '+tot+' ภาระงาน</span></div><div class="wl-bar">'+order.map(k=>'<span class="wl-s wl-'+k+'" style="flex:'+st[k].task+'" title="'+Q[k].name+'">'+st[k].task+'</span>').join('')+'</div><div class="wl-lg">'+order.map(k=>'<span><i class="wl-d wl-'+k+'"></i>'+Q[k].name.replace('&','&amp;')+' <b>'+st[k].task+'</b> <em>('+Math.round(st[k].task*100/tot)+'%)</em></span>').join('')+'</div>';
+const tm=document.querySelector('.tmatrix');const mono=tm&&tm.querySelector('p.mono');if(tm)tm.insertBefore(w,mono)})();
 const fd=document.getElementById('findings');
 document.getElementById('fopen').addEventListener('click',()=>fd.showModal());
 document.getElementById('fclose').addEventListener('click',()=>fd.close());
