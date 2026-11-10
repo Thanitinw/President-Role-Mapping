@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>President &amp; Group COO Role Map</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: governance dossier — one long read, each role section pairs the duty text (left) with the evidence images (right); Tricker quadrant colours tag every role */
+:root{
+  --bg:#F4F6F9; --surface:#FFFFFF; --ink:#14202E; --muted:#56637A; --line:#D9DFE8;
+  --navy:#12355B; --navy-soft:#E6EDF6;
+  --q-acc:#8A94A3; --q-acc-bg:#EEF0F3;      /* Providing accountability (grey) */
+  --q-str:#1F7AE0; --q-str-bg:#E3EEFC;      /* Strategy formulation (blue) */
+  --q-mon:#1F9D4C; --q-mon-bg:#E2F4E8;      /* Monitoring & supervision (green) */
+  --q-pol:#E8860C; --q-pol-bg:#FDF0DE;      /* Policy making (orange) */
+  --warn:#B4531A; --warn-bg:#FBEDE3;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1520; --surface:#162131; --ink:#E6ECF4; --muted:#9AA8BC; --line:#2A384C;
+  --navy:#8DB8EE; --navy-soft:#1B2C44;
+  --q-acc:#A7B0BE; --q-acc-bg:#232D3B; --q-str:#5FA4F5; --q-str-bg:#16304F;
+  --q-mon:#4CC77A; --q-mon-bg:#153424; --q-pol:#F3A447; --q-pol-bg:#3A2A14;
+  --warn:#F0956A; --warn-bg:#3A2219; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1520; --surface:#162131; --ink:#E6ECF4; --muted:#9AA8BC; --line:#2A384C;
+  --navy:#8DB8EE; --navy-soft:#1B2C44;
+  --q-acc:#A7B0BE; --q-acc-bg:#232D3B; --q-str:#5FA4F5; --q-str-bg:#16304F;
+  --q-mon:#4CC77A; --q-mon-bg:#153424; --q-pol:#F3A447; --q-pol-bg:#3A2A14;
+  --warn:#F0956A; --warn-bg:#3A2219; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.3;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--q-str);outline-offset:2px;border-radius:4px}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.top a{flex:none;text-decoration:none;color:var(--muted);font-size:.88rem;padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav.top a.active{background:var(--navy);color:var(--surface)}
+nav.top a:hover{background:var(--navy-soft);color:var(--ink)}
+
+/* hero */
+header.hero{background:var(--surface);border-bottom:1px solid var(--line)}
+header.hero .wrap{padding-block:48px 40px;display:grid;gap:28px}
+.hero .lede{max-width:none;color:var(--muted);font-size:1.05rem}
+.split{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+.split .side{border:1px solid var(--line);border-radius:10px;padding:18px 20px;background:var(--bg);min-width:0}
+.split .side h3{margin-bottom:6px}
+.split .side.pres{border-color:var(--navy);background:var(--navy-soft)}
+.split .arrow{align-self:center;font-family:var(--f-mono);font-size:.78rem;color:var(--muted);text-align:center;max-width:150px}
+.split .arrow b{display:block;font-size:1.6rem;color:var(--navy);line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:.78rem;padding:2px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+@media (max-width:760px){.split{grid-template-columns:1fr}.split .arrow{max-width:none}.split .arrow b{transform:rotate(90deg);display:inline-block}}
+
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;gap:8px;margin-bottom:28px;max-width:none}
+.sec-head p{color:var(--muted)}
+
+/* Tricker matrix */
+.tricker{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+.tricker > figure,.tricker > .figs{max-width:980px;width:100%;justify-self:center}
+.tricker .tmatrix{max-width:none;width:100%}
+.qdetail li.pg{list-style:none;margin-left:-1.1em;margin-bottom:6px}
+.qdetail li.pg ul{margin:2px 0 0;padding-left:1.2em}
+.qdetail a.cref{font-family:var(--f-mono);font-size:.8rem;font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;color:var(--navy)}
+html{scroll-padding-top:56px}
+.tricker .qdetail{grid-column:1/-1}
+.ceo{position:static!important;transform:none!important;max-width:none!important;justify-self:center;font-size:.75rem}
+.q{min-height:0!important;padding:18px 20px!important}
+.ql{display:grid;gap:12px;font-size:1rem;line-height:1.6;color:var(--ink)}
+.ql .grp{display:grid;gap:3px}
+.ql a.ref{text-decoration:none;color:inherit;display:block}
+.ql a.ref:hover{text-decoration:underline}
+.ql .ref{font-family:var(--f-display);font-size:.95rem;font-weight:600}
+.ql .li{position:relative;padding-left:14px}
+.ql .li::before{content:"";position:absolute;left:3px;top:.62em;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55}
+.q.acc .ref{color:var(--q-acc)}.q.str .ref{color:var(--q-str)}.q.mon .ref{color:var(--q-mon)}.q.pol .ref{color:var(--q-pol)}
+@media (max-width:900px){.tricker{grid-template-columns:1fr}}
+.matrix{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto auto;gap:6px}
+.quad{grid-column:2/4;grid-row:2/4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;gap:6px;position:relative}
+.ax{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;padding:4px}
+.ax.v{writing-mode:vertical-rl;transform:rotate(180deg)}
+.q{border:2px solid transparent;border-radius:8px;padding:16px;text-align:left;font:inherit;color:var(--ink);min-height:132px;display:flex;flex-direction:column;gap:6px;transition:transform .15s,border-color .15s}
+.q:hover{transform:translateY(-2px)}
+.q[aria-pressed="true"]{border-color:var(--ink)}
+.q .qn{font-family:var(--f-display);font-weight:700;font-size:1.3rem}
+.q .qr{font-size:.82rem;color:var(--muted)}
+.q.acc{background:var(--q-acc-bg)} .q.acc .qn{color:var(--q-acc)}
+.q.str{background:var(--q-str-bg)} .q.str .qn{color:var(--q-str)}
+.q.mon{background:var(--q-mon-bg)} .q.mon .qn{color:var(--q-mon)}
+.q.pol{background:var(--q-pol-bg)} .q.pol .qn{color:var(--q-pol)}
+.ceo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:70%;z-index:2;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 12px;font-size:.75rem;text-align:center;color:var(--muted);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.qdetail{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;gap:16px;min-width:0}
+.qdetail .tag{display:inline-block;font-family:var(--f-mono);font-size:.72rem;padding:2px 8px;border-radius:4px;color:#fff}
+.qdetail .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.qdetail .cols{grid-template-columns:1fr}}
+.qdetail h4{margin:0 0 4px;font-family:var(--f-display);font-size:.95rem}
+.qdetail ul{margin:0;padding-left:1.1em;font-size:.92rem}
+.qdetail .maps{border-top:1px dashed var(--line);padding-top:12px;font-size:.92rem}
+
+/* role sections */
+.role{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:start}
+@media (max-width:900px){.role{grid-template-columns:1fr}}
+.rtext{display:grid;gap:16px}
+.rnum{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rnum .n{font-family:var(--f-mono);font-size:.8rem;background:var(--navy);color:var(--surface);padding:3px 9px;border-radius:4px}
+.qtag{font-size:.75rem;padding:2px 10px;border-radius:999px;font-weight:600}
+.qtag.str{background:var(--q-str-bg);color:var(--q-str)} .qtag.pol{background:var(--q-pol-bg);color:var(--q-pol)}
+.qtag.mon{background:var(--q-mon-bg);color:var(--q-mon)} .qtag.acc{background:var(--q-acc-bg);color:var(--q-acc)}
+blockquote.duty{margin:0;border-left:3px solid var(--navy);padding:4px 0 4px 16px;color:var(--ink);font-size:.95rem}
+.link-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.link-list li{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:.93rem}
+.link-list li::before{content:"↔";color:var(--navy);font-weight:700}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure button{all:unset;cursor:zoom-in;display:block;width:100%}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figcaption{padding:10px 14px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line)}
+.figs{display:grid;gap:16px}
+.subrole{margin-top:40px}
+.w2t{display:grid;gap:14px}
+.w2t h4{margin:0 0 4px;font-family:var(--f-display);font-size:1rem}
+.w2t-a{color:var(--q-str)}.w2t-b{color:var(--q-pol)}
+.w2t p{font-size:.95rem}
+.w2t-n{color:var(--muted)}
+
+.role.stack{grid-template-columns:1fr}
+.role.stack .rtext{max-width:none}
+.role.stack .rtext > blockquote,.role.stack .rtext > p{max-width:none}
+.role.stack .book{grid-template-columns:minmax(0,1fr) minmax(0,4fr);max-width:1000px}
+.role.stack .book .toc{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:760px){.role.stack .book{grid-template-columns:1fr}.role.stack .book .toc{grid-template-columns:1fr 1fr}}
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px;align-items:start}
+.book .toc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.book figure img{aspect-ratio:3/4;object-fit:cover;object-position:top}
+.book > figure img{aspect-ratio:3/4;object-fit:contain;background:#fff}
+.book figcaption{padding:6px 10px;font-size:.75rem}
+
+/* stage track */
+.track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:4px}
+.stage{padding:10px 12px;border-radius:6px;background:var(--surface);border:1px solid var(--line);font-size:.82rem;min-width:0}
+.stage b{display:block;font-family:var(--f-display);font-size:.92rem}
+.stage.in{border-color:var(--navy);background:var(--navy-soft)}
+.stage.gap{border-style:dashed;color:var(--muted)}
+@media (max-width:520px){.track{grid-template-columns:1fr 1fr}}
+
+/* book table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:var(--f-display);font-weight:600;background:var(--navy-soft)}
+tr:last-child td{border-bottom:0}
+td.ok{color:var(--q-mon);font-weight:600;white-space:nowrap} td.no{color:var(--warn);font-weight:600;white-space:nowrap}
+.mono{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+
+/* loop */
+.loop{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch}
+.loop .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start;position:relative;min-width:0}
+.loop .step .k{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.loop .step.board{background:var(--navy);color:var(--surface);border-color:var(--navy)}
+.loop .step.board .k{color:inherit;opacity:.75}
+.loop .step p{font-size:.85rem}
+@media (max-width:900px){.loop{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.loop{grid-template-columns:1fr}}
+.loopnote{margin-top:14px;font-size:.9rem;color:var(--muted)}
+
+/* findings */
+.lcycle{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.lcycle svg{display:block;width:100%;max-width:1080px;min-width:700px;margin:0 auto;height:auto;font-family:var(--f-body)}
+.lcycle .lring{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:3 6}
+.lcycle .larr{fill:none;stroke:var(--muted);stroke-width:1.8}.lcycle .lm{fill:var(--muted)}
+.lcycle .llbl{fill:var(--muted);font-size:12.5px;font-family:var(--f-mono)}
+.lcycle .ln{stroke-width:1.6}.lcycle a:hover .ln{stroke-width:3}
+.lcycle .ln-board{fill:var(--navy);stroke:var(--navy)}.lcycle .ln-str{fill:var(--q-str-bg);stroke:var(--q-str)}.lcycle .ln-pol{fill:var(--q-pol-bg);stroke:var(--q-pol)}.lcycle .ln-mon{fill:var(--q-mon-bg);stroke:var(--q-mon)}.lcycle .ln-acc{fill:var(--q-acc-bg);stroke:var(--q-acc)}
+.lcycle .lt{font-family:var(--f-display);font-weight:700;font-size:15.5px}
+.lcycle .lt-board,.lcycle .ls-board{fill:var(--surface)}.lcycle .lt-str{fill:var(--q-str)}.lcycle .lt-pol{fill:var(--q-pol)}.lcycle .lt-mon{fill:var(--q-mon)}.lcycle .lt-acc{fill:var(--ink)}
+.lcycle .ls{fill:var(--ink);font-size:13px}
+.lcycle .ls.ls-board{fill:var(--surface);opacity:.9}
+.lcycle .lc1{fill:var(--ink);font-family:var(--f-display);font-weight:700;font-size:19px}
+.lcycle .lc2{fill:var(--muted);font-size:13px}
+.findings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:760px){.findings{grid-template-columns:1fr}}
+.find{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:8px;padding:16px 18px;display:grid;gap:6px;min-width:0}
+.find.minor{border-left-color:var(--q-acc)}
+.find .lvl{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+.find.minor .lvl{color:var(--muted)}
+.find p{font-size:.9rem}
+footer{padding-block:32px 48px;color:var(--muted);font-size:.82rem}
+
+#cmodal{width:96vw;max-width:96vw;height:94vh;max-height:94vh;margin:auto}
+#cmodal .fbox{max-height:94vh;height:94vh;border-radius:14px;padding:32px max(24px,3.5vw);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+#cmodal .cm-list{font-size:1.25rem;line-height:1.75;gap:14px}
+#cmodal .cm-note{font-size:1.1rem}
+#cmodal h2{font-size:clamp(1.6rem,2.8vw,2.2rem)}
+#cmodal .cm-imgs figure img{height:min(52vh,560px)!important}
+.ql .grp{cursor:pointer;border-radius:6px;padding:4px 6px;margin:-4px -6px;transition:background .15s}
+.ql .grp:hover{background:color-mix(in srgb,var(--surface) 55%,transparent)}
+mark.kw{background:var(--navy-soft);color:var(--navy);font-weight:600;padding:0 3px;border-radius:3px}
+#cmodal[data-q="str"] mark.kw{background:var(--q-str-bg);color:var(--q-str)}
+#cmodal[data-q="pol"] mark.kw{background:var(--q-pol-bg);color:var(--q-pol)}
+#cmodal[data-q="mon"] mark.kw{background:var(--q-mon-bg);color:var(--q-mon)}
+#cmodal[data-q="acc"] mark.kw{background:var(--q-acc-bg);color:var(--ink);box-shadow:inset 0 -2px 0 var(--q-acc)}
+.cm-imgs .hlfig{grid-column:1/-1;max-width:980px}
+.hlwrap{position:relative;display:block}
+#cmodal .cm-imgs .hlfig img{height:auto!important;object-fit:fill}
+.hlbox{position:absolute;border:4px solid #E5281C;border-radius:4px;box-shadow:0 0 0 3px rgba(229,40,28,.25);pointer-events:none}
+.cm-list{margin:0;padding-left:1.2em;display:grid;gap:10px;font-size:1rem}
+.cm-list ul{margin:6px 0 0;padding-left:1.2em;display:grid;gap:4px}
+.cm-note{margin-top:14px;padding:10px 14px;background:var(--navy-soft);border-radius:8px;font-size:.92rem}
+.cm-imgs{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.cm-imgs figure img{width:100%!important;max-width:100%!important;height:260px!important;max-height:none!important;object-fit:contain;background:#fff;border-radius:0}
+.flink{all:unset;cursor:pointer;color:var(--navy);text-decoration:underline;font-size:.85rem;display:inline-block;margin-bottom:8px}
+.flink:focus-visible{outline:3px solid var(--q-str);outline-offset:2px}
+.fdlg{border:0;padding:0;background:transparent;width:min(960px,94vw);max-height:90vh;color:var(--ink)}
+.fdlg .fbox{background:var(--bg);border-radius:12px;padding:28px max(20px,3vw);max-height:90vh;overflow:auto;position:relative}
+.fdlg .fbox .sec-head{margin-bottom:20px}
+.fclose{position:sticky;top:0;float:right;font:600 .85rem var(--f-body);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;z-index:2}
+#zoom{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(5,10,18,.82)}
+dialog img{display:block;max-width:96vw;max-height:88vh;width:auto;height:auto;background:#fff;border-radius:6px}
+dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));font:600 .9rem var(--f-body);background:#fff;color:#14202E;border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<nav class="top" aria-label="สารบัญ"><div class="wrap">
+  <a href="#tricker">Tricker Model</a>
+  <a href="#r1">1 · Strategy Formulation</a>
+  <a href="#r2">2 · Strategy Execution</a>
+  <a href="#r3">3 · Monitoring</a>
+  <a href="#r4">4 · Accountability</a>
+  <a href="#r5">5 · หน้าที่อื่น</a>
+  <a href="#loop">วงจรรวม</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">บทบาทหน้าที่ President · วิเคราะห์เชื่อมโยงกับภาพประกอบ 9 ภาพ</div>
+  <h1>President &amp; Group COO: แปลงทิศทางของ Board ให้เป็นกลไกบริหารกลุ่มบริษัท</h1>
+  <p class="lede">Tricker Model เป็นกรอบของคณะกรรมการ ไม่ใช่ของ President โดยตรง President จึงนำโมเดลมาประยุกต์เพื่อสร้าง Group Management Mechanism ที่ขับเคลื่อนกลยุทธ์และรายงานผลกลับไปยัง Board</p>
+  <div class="split">
+    <div class="side">
+      <div class="eyebrow">Board of Directors</div>
+      <h3>กำหนดทิศทางและกำกับ</h3>
+      <p>ใช้ Tricker Model เต็มรูปแบบ: Strategic Direction และ Corporate Oversight ตาม CG Code ของ ก.ล.ต.</p>
+      <div class="chips"><span class="chip">อนุมัติกลยุทธ์</span><span class="chip">อนุมัตินโยบาย/งบประมาณ</span><span class="chip">กำกับดูแล</span></div>
+    </div>
+    <div class="arrow"><b>⇄</b>Approve and work with and through the President &amp; Group COO</div>
+    <div class="side pres">
+      <div class="eyebrow">President &amp; Group COO</div>
+      <h3>ขับเคลื่อนและรายงานผล</h3>
+      <p>ประยุกต์ Tricker Model เป็นกลไกบริหารกลุ่มบริษัท เน้น Strategy Execution และ Performance Monitoring &amp; Reporting เป็นระบบ</p>
+      <div class="chips"><span class="chip">พัฒนา/เสนอกลยุทธ์</span><span class="chip">นโยบาย + Platform</span><span class="chip">ติดตาม + รายงาน</span></div>
+    </div>
+  </div>
+</div></header>
+
+<main>
+<section id="tricker"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">กรอบอ้างอิง · ภาพ Tricker Model</div>
+    <h2>4 ช่องของ Board กับงานที่ President รับมาประยุกต์</h2>
+    <p>เทียบภาพ Tricker Model ของ Board กับหน้าที่ของ President สีของแต่ละช่องใช้เป็นป้ายกำกับบทบาทตลอดทั้งหน้า</p>
+  </div>
+  <div class="tricker">
+    <div class="figs">
+      <figure><button data-zoom="img/tricker.jpg" aria-label="ขยายภาพ Tricker Model"><img src="img/tricker.jpg" alt="ตาราง Tricker Model ฉบับเต็ม แสดงรายละเอียดบทบาท Board ทั้ง 4 ช่อง" loading="lazy"></button><figcaption>Tricker Model (ฉบับรายละเอียด).jpg · กดเพื่อขยาย</figcaption></figure>
+    </div>
+    <div class="tmatrix">
+      <div class="matrix" role="group" aria-label="Tricker Model">
+        <span style="grid-column:2;grid-row:1" class="ax">Conformance focus</span><span style="grid-column:3;grid-row:1" class="ax">Performance focus</span>
+        <span style="grid-column:1;grid-row:2" class="ax v">External</span>
+        <span style="grid-column:1;grid-row:3" class="ax v">Internal</span>
+        <div class="quad">
+        <div class="q acc" data-q="acc"><span class="qn">Providing accountability</span><span class="ql"><span class="grp"><b class="ref">ข้อ 3.2</b><span class="li">กำหนดรูปแบบและรอบการรายงานบน Single Source of Truth</span><span class="li">รายงาน Performance Gap และ Exception อย่างโปร่งใส</span><span class="li">สนับสนุนผู้ตรวจสอบ และติดตาม Audit Findings</span></span><span class="grp"><b class="ref">ข้อ 4</b><span class="li">ปฏิบัติงานที่ Board / Executive Committee มอบหมาย</span></span></span></div>
+        <div class="q str" data-q="str"><span class="qn">Strategy formulation</span><span class="ql"><span class="grp"><b class="ref">ข้อ 1.1</b><span class="li">วิเคราะห์ Environment, Opportunities, Risks, Resources &amp; Capabilities</span><span class="li">พัฒนา/ทบทวน Corporate Strategy และแผนระยะสั้น-ยาว</span><span class="li">เปลี่ยน Business Model สู่ Platform Capitalism → Ecosystem Capitalism</span><span class="li">Wealth Creation ผ่านบริษัทย่อย และ Holding Company</span></span><span class="grp"><b class="ref">ข้อ 1.2</b><span class="li">ถ่ายทอดสู่ Business &amp; Functional Level</span><span class="li">ประเมิน Emergent Strategies และเสนอปรับกลยุทธ์</span></span></span></div>
+        <div class="q mon" data-q="mon"><span class="qn">Monitoring &amp; Supervision</span><span class="ql"><span class="grp"><b class="ref">ข้อ 1.2</b><span class="li">ติดตามผลเทียบกลยุทธ์ และระบุ Non-realized Strategies</span></span><span class="grp"><b class="ref">ข้อ 3.1</b><span class="li">Governance Platform: Performance, Compliance, Risk, Internal Control</span><span class="li">ติดตาม Exception</span></span></span></div>
+        <div class="q pol" data-q="pol"><span class="qn">Policy making</span><span class="ql"><span class="grp"><b class="ref">ข้อ 2.1</b><span class="li">พัฒนานโยบายระดับกลุ่ม เสนอ Executive Committee → Board</span><span class="li">Adopt &amp; apply Management Techniques 9 ด้าน และ Delegation of Authority เพื่อวางมาตรฐานวิธีบริหารและอำนาจตัดสินใจเดียวกันทั้งกลุ่ม</span><span class="li">จัดทำ Management Architecture Model เพื่อเชื่อมเทคนิคเหล่านี้เป็นระบบเดียว รองรับ Platform และเพิ่ม Efficiency ของกลุ่มบริษัท</span></span><span class="grp"><b class="ref">ข้อ 2.2</b><span class="li">Platform: 6 Revenue Stream × 5 Digital Architecture</span></span></span></div>
+        </div>
+        <span style="grid-column:2;grid-row:4" class="ax">Past &amp; Present focus</span><span style="grid-column:3;grid-row:4" class="ax">Future focus</span>
+        <div class="ceo" style="grid-column:2/4;grid-row:5">⇄ Approve and work with and through the President &amp; Group COO</div>
+      </div>
+      <p class="mono" style="margin-top:10px">กดหัวข้อหรือข้อความในแต่ละช่อง เพื่อเปิดรายละเอียดฉบับเต็มของข้อนั้น</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="r1"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">หน้าที่ข้อ 1</div>
+    <h2>การพัฒนากลยุทธ์ระดับกลุ่มบริษัท (Strategy Formulation)</h2>
+  </div>
+
+  <div class="role stack">
+    <div class="rtext">
+      <div class="rnum"><span class="n">1.1</span><h3>Business Model Transformation &amp; Wealth Creation</h3><span class="qtag str">Strategy formulation</span></div>
+      <blockquote class="duty">ประสานงานกับ VP, CEO-RS และ C-Level เพื่อพัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ) ให้สอดคล้องกับ Vision และ Corporate Objectives · ร่วมพัฒนาแผนธุรกิจที่มุ่งเปลี่ยน Business Model จาก Industrial Capitalism → Platform Capitalism → Ecosystem Capitalism · พัฒนาแนวทาง Wealth Creation ของกลุ่มบริษัท 2 แนวทาง · ทั้งหมดนำเสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ</blockquote>
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px">เส้นทางการเปลี่ยนผ่าน Business Model</div>
+        <div class="track" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+          <div class="stage in"><b>Industrial Capitalism</b>Product = Asset</div>
+          <div class="stage in"><b>Platform Capitalism</b>Platform = Asset</div>
+          <div class="stage in"><b>Ecosystem Capitalism</b>Ecosystem = Advantage</div>
+        </div>
+      </div>
+      <div class="role" style="margin-top:8px">
+        <ul class="link-list">
+          <li><span><b>การวางแผนกลยุทธ์ 4 ระยะ</b> คือระดับความพร้อมของการพัฒนา Corporate Strategy ในข้อนี้: เริ่มจาก Basic Financial Planning (งบประมาณ เน้นภายใน) → Forecast-based Planning → Externally-oriented Planning (ตอบสนองตลาดและคู่แข่ง) → <b>Strategic Management</b> ที่สร้างข้อได้เปรียบในการแข่งขันและ pro-action ต่อสิ่งแวดล้อม</span></li>
+          <li><span>การวิเคราะห์ Business Environment, Opportunities, Risks และ Resources &amp; Capabilities ที่ข้อ 1.1 กำหนด คือสิ่งที่พาองค์กรจากระยะ 1–2 ไปสู่ระยะ 3–4 ซึ่งจำเป็นต่อการเปลี่ยน Business Model สู่ Platform Capitalism และ Ecosystem Capitalism</span></li>
+        </ul>
+        <figure><button data-zoom="img/four-phases.jpg" aria-label="ขยายภาพ การวางแผนกลยุทธ์ 4 ระยะ"><img src="img/four-phases.jpg" alt="ตารางการวางแผนกลยุทธ์ 4 ระยะ: Basic Financial Planning, Forecast-based Planning, Externally-oriented Planning และ Strategic Management" loading="lazy"></button><figcaption>การวางแผนกลยุทธ์ 4 ระยะ.png</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="role subrole">
+    <div class="rtext">
+      <div class="rnum"><span class="n">1.1</span><h3>สร้างความมั่งคั่ง 2 แนวทาง</h3><span class="qtag str">Strategy formulation</span></div>
+      <p>ภาพ Wealth Creation ด้านขวาแสดงกลไก: ทุนที่จับต้องไม่ได้ถูกนำมาใช้ประโยชน์กับสินทรัพย์ที่จับต้องได้ ผ่านกรอบ ESG จนเกิด Wealth แล้ววนกลับเป็นการลงทุนต่อหรือปันผล การสร้างความมั่งคั่งแบ่งเป็น 2 แนวทาง</p>
+      <div class="w2t">
+        <div><h4 class="w2t-a">แนวทางที่ 1 · ผ่านบริษัทย่อย</h4><p>ส่งเสริม Business Synergy ระหว่างบริษัทในกลุ่ม นำทุนที่จับต้องไม่ได้ (Human, Structural, Customer, Relationship Capital) มาใช้ประโยชน์กับสินทรัพย์ของธุรกิจ สร้างผลตอบแทนจากการดำเนินธุรกิจ</p></div>
+        <div><h4 class="w2t-b">แนวทางที่ 2 · ผ่าน Holding Company</h4><p>ใช้ประโยชน์จาก Tangible &amp; Intangible Assets สร้างผลตอบแทนจาก Investment, Leasing และ Lending แล้วนำกลับไป Reinvestment เป็นสินทรัพย์เพิ่ม</p></div>
+        <p class="w2t-n">ผลตอบแทนจากทั้งสองแนวทางจัดสรรแก่ผู้มีส่วนได้เสีย (เช่น เงินปันผล) ตามความเหมาะสม ภายใต้กรอบอำนาจอนุมัติและกฎหมายที่เกี่ยวข้อง</p>
+      </div>
+    </div>
+    <div class="figs">
+      <figure><button data-zoom="img/wealth.jpg" aria-label="ขยายภาพ Wealth Creation"><img src="img/wealth.jpg" alt="แผนภาพการสร้างความมั่งคั่งจากทุนที่จับต้องไม่ได้และสินทรัพย์ที่จับต้องได้ผ่าน ESG" loading="lazy"></button><figcaption>Wealth Creation (Intangible-Tangible-ESG).jpg</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="role subrole">
+    <div class="rtext">
+      <div class="rnum"><span class="n">1.2</span><h3>Strategy Communication, Monitoring &amp; Review</h3><span class="qtag str">Strategy formulation</span></div>
+      <blockquote class="duty">ถ่ายทอด Corporate Strategy ที่อนุมัติแล้วไปสู่ Business Level และ Functional Level Strategy พร้อมเป้าหมาย แผนงาน งบประมาณ ตัวชี้วัด · ติดตามผลการดำเนินงานเทียบกับกลยุทธ์ (Strategic Review) เพื่อระบุ Non-realized Strategies · ประเมิน Emergent Strategies ระหว่างการดำเนินงาน เพื่อเสนอปรับกลยุทธ์ให้สอดคล้องกับสถานการณ์</blockquote>
+      <ul class="link-list">
+        <li><span><b>Levels of Strategy</b> คือโครงสร้างการถ่ายทอด: Head Office (Corporate) → Division (Business) → Business Functions (Functional)</span></li>
+        <li><span><b>Mintzberg Strategy Cycle</b> ให้คำศัพท์สำหรับการทบทวน: Realized = Deliberate + Emergent ส่วนที่ไม่ได้ทำคือ Non-realized</span></li>
+      </ul>
+    </div>
+    <div class="figs">
+      <figure><button data-zoom="img/levels.jpg" aria-label="ขยายภาพ Levels of Strategy"><img src="img/levels.jpg" alt="Levels of Strategy: Corporate, Business, Functional กับผังองค์กร Head Office, Division, Business Functions, Market" loading="lazy"></button><figcaption>ภาพในเอกสาร · Levels of Strategy</figcaption></figure>
+      <figure><button data-zoom="img/mintzberg2.jpg" aria-label="ขยายภาพ Strategy Cycle"><img src="img/mintzberg2.jpg" alt="แผนภาพ Mintzberg: Intended, Deliberate, Non-realized, Emerging และ Realized strategy" loading="lazy"></button><figcaption>Mintzberg Strategy Cycle (Deliberate-Emergent).png</figcaption></figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="r2"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">หน้าที่ข้อ 2</div>
+    <h2>การพัฒนากลไกขับเคลื่อนกลยุทธ์ (Strategy Execution)</h2>
+  </div>
+
+  <div class="role stack">
+    <div class="rtext">
+      <div class="rnum"><span class="n">2.1</span><h3>Policy Making &amp; Management Techniques</h3><span class="qtag pol">Policy making</span></div>
+      <blockquote class="duty">พัฒนานโยบายของกลุ่มบริษัท เสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors อนุมัติ และประยุกต์ Management Techniques ด้าน Strategy, Marketing, Operations (TQM), Finance, Human Resources, Planning &amp; Resource Allocation, Information Technology, Management Science และ Efficiency &amp; Effectiveness จัดทำเป็น Management Architecture Model เป็นฐานรองรับ Platform และยกระดับ Efficiency ของกลุ่มบริษัท</blockquote>
+      <p>การประยุกต์ Management Techniques ในข้อนี้อ้างอิง <i>A Handbook of Management Techniques</i> (Michael Armstrong, <b>Second Edition</b>) ครอบคลุม 9 ด้านตาม Part 2–10 ของหนังสือ</p>
+    </div>
+  </div>
+
+  <div class="role subrole">
+    <div class="rtext">
+      <div class="rnum"><span class="n">2.2</span><h3>Platform Development</h3><span class="qtag pol">Policy making</span></div>
+      <blockquote class="duty">พัฒนา 6 Revenue Stream Type Platform เชื่อมโยงกับ 5 Digital Architecture Model บูรณาการ Resources &amp; Capabilities, Systems และ Work Processes ภายใต้กรอบ Management Techniques ข้อ 2.1</blockquote>
+      <ul class="link-list">
+        <li><span><b>Spaghetti → Architecture Model</b> (Digital Engineering &amp; DBTP) แสดงเป้าหมายของข้อ 2.1–2.2: เปลี่ยนระบบและกระบวนการที่พันกันให้เป็นโครงสร้างลำดับชั้น Objective → Project → Systems → Tasks → Work packages</span></li>
+        <li><span>Management Architecture Model ในข้อ 2.1 เป็นฐานที่ Platform ในข้อ 2.2 วางลงไป</span></li>
+      </ul>
+    </div>
+    <div class="figs">
+      <figure><button data-zoom="img/dbtp.jpg" aria-label="ขยายภาพ DBTP"><img src="img/dbtp.jpg" alt="Digital Engineering และ DBTP: เปลี่ยนจาก Spaghetti model เป็น Architecture model" loading="lazy"></button><figcaption>ภาพในเอกสาร · Digital Engineering (DE) &amp; DBTP</figcaption></figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="r3"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">หน้าที่ข้อ 3</div>
+    <h2>การกำกับติดตาม (Monitoring &amp; Supervision)</h2>
+  </div>
+  <div class="role stack">
+    <div class="rtext">
+      <div class="rnum"><span class="n">3.1</span><h3>Performance Monitoring</h3><span class="qtag mon">Monitoring &amp; Supervision</span></div>
+      <blockquote class="duty">ประสานงานกับ VP Governance &amp; Sustainability และ C-Level ของบริษัทย่อย พัฒนา Governance Platform เป็นแหล่งข้อมูลเดียวกัน (Single Source of Truth) เพื่อกำกับติดตาม Performance, Compliance, Risk Management และ Internal Control พร้อมระบุและแจ้งเตือน Exception และใช้เป็นฐานการรายงานต่อ Executive Committee และ Board of Directors</blockquote>
+    </div>
+  </div>
+</div></section>
+
+<section id="r4"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">หน้าที่ข้อ 4</div>
+    <h2>การรายงานผลและความรับผิดชอบ (Providing Accountability)</h2>
+  </div>
+  <div class="role stack">
+    <div class="rtext">
+      <div class="rnum"><span class="n">4.1</span><h3>Reporting Integrity &amp; Transparency</h3><span class="qtag acc">Providing accountability</span></div>
+      <blockquote class="duty">กำหนดรูปแบบและรอบการรายงานต่อ Executive Committee และ Board of Directors โดยใช้ข้อมูลจาก Governance Platform ซึ่งเป็นแหล่งข้อมูลเดียวกัน (Single Source of Truth) ของกลุ่มบริษัท ให้ข้อมูลถูกต้อง ครบถ้วน ทันเวลา · รายงาน Performance Gap และ Exception อย่างโปร่งใส พร้อมอธิบายสาเหตุ ผลกระทบ และ Corrective &amp; Preventive Action</blockquote>
+      <div class="rnum"><span class="n">4.2</span><h3>Audit Support</h3><span class="qtag acc">Providing accountability</span></div>
+      <blockquote class="duty">สนับสนุนการเข้าถึงข้อมูลของ Internal / External Audit และ Audit Committee รวมถึงจัดให้มีระบบติดตามและรายงานความคืบหน้าการแก้ไข Audit Findings อย่างสม่ำเสมอ</blockquote>
+    </div>
+  </div>
+</div></section>
+
+<section id="r5"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">หน้าที่ข้อ 5</div>
+    <h2>ปฏิบัติหน้าที่อื่นที่ได้รับมอบหมาย</h2>
+  </div>
+  <div class="rtext">
+    <blockquote class="duty">ปฏิบัติหน้าที่อื่นใดตามที่ได้รับมอบหมายจาก Board of Directors และ/หรือ Executive Committee ภายใต้ขอบเขตอำนาจ</blockquote>
+    <p>ข้อนี้ผูกกับหลัก “Approve and work with and through the President &amp; Group COO” ของ Tricker Model</p>
+  </div>
+</div></section>
+
+<section id="loop"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow">ภาพรวม</div>
+    <h2>วงจรบทบาท President ระหว่างสองรอบการประชุม Board</h2>
+    <p>เรียงหน้าที่เป็นวงจรการทำงาน ตั้งแต่ Board ให้ทิศทาง จนถึงรายงานผลกลับไปยัง Board</p>
+  </div>
+  <div class="lcycle"><svg viewBox="0 0 1080 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="วงจรบทบาท President ระหว่างสองรอบการประชุม Board">
+<defs><marker id="lah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="lm"/></marker></defs>
+<ellipse cx="540" cy="320" rx="340" ry="230" class="lring"/>
+<path d="M658.0 148.0 Q720.7 151.7 745.3 190.9" class="larr" marker-end="url(#lah)"/>
+<text x="735.3" y="143.1" class="llbl" text-anchor="start">ทิศทาง + อนุมัติ</text>
+<path d="M835.5 306.9 Q827.0 383.1 767.7 448.1" class="larr" marker-end="url(#lah)"/>
+<text x="846.5" y="392.4" class="llbl" text-anchor="start">แปลงสู่กลไก</text>
+<path d="M597.8 506.1 Q540.0 532.1 482.2 506.1" class="larr" marker-end="url(#lah)"/>
+<text x="540.0" y="557.1" class="llbl" text-anchor="middle">ดำเนินการ</text>
+<path d="M312.3 448.1 Q253.0 383.1 244.5 306.9" class="larr" marker-end="url(#lah)"/>
+<text x="233.5" y="392.4" class="llbl" text-anchor="end">ข้อมูลผล</text>
+<path d="M334.7 190.9 Q359.3 151.7 422.0 148.0" class="larr" marker-end="url(#lah)"/>
+<text x="344.7" y="143.1" class="llbl" text-anchor="end">รายงานผล</text>
+<a href="#tricker"><rect x="408.0" y="42.0" width="264" height="96" rx="10" class="ln ln-board"/>
+<text x="540.0" y="76.0" class="lt lt-board" text-anchor="middle">Board of Directors</text>
+<text x="540.0" y="100.0" class="ls ls-board" text-anchor="middle">ให้ทิศทาง Vision และ Objectives</text>
+<text x="540.0" y="119.0" class="ls ls-board" text-anchor="middle">อนุมัติกลยุทธ์ นโยบาย งบประมาณ</text>
+</a>
+<a href="#r1"><rect x="731.4" y="200.9" width="264" height="96" rx="10" class="ln ln-str"/>
+<text x="863.4" y="234.9" class="lt lt-str" text-anchor="middle">ข้อ 1 · Strategy Formulation</text>
+<text x="863.4" y="258.9" class="ls ls-str" text-anchor="middle">พัฒนา Corporate Strategy</text>
+<text x="863.4" y="277.9" class="ls ls-str" text-anchor="middle">ถ่ายทอด และทบทวนกลยุทธ์</text>
+</a>
+<a href="#r2"><rect x="607.8" y="458.1" width="264" height="96" rx="10" class="ln ln-pol"/>
+<text x="739.8" y="492.1" class="lt lt-pol" text-anchor="middle">ข้อ 2 · Strategy Execution</text>
+<text x="739.8" y="516.1" class="ls ls-pol" text-anchor="middle">นโยบาย, Management Techniques</text>
+<text x="739.8" y="535.1" class="ls ls-pol" text-anchor="middle">และ Platform</text>
+</a>
+<a href="#r3"><rect x="208.2" y="458.1" width="264" height="96" rx="10" class="ln ln-mon"/>
+<text x="340.2" y="492.1" class="lt lt-mon" text-anchor="middle">ข้อ 3 · Performance Monitoring</text>
+<text x="340.2" y="516.1" class="ls ls-mon" text-anchor="middle">Governance Platform ติดตาม</text>
+<text x="340.2" y="535.1" class="ls ls-mon" text-anchor="middle">Performance, Risk, Exception</text>
+</a>
+<a href="#r4"><rect x="84.6" y="200.9" width="264" height="96" rx="10" class="ln ln-acc"/>
+<text x="216.6" y="234.9" class="lt lt-acc" text-anchor="middle">ข้อ 4 · Providing Accountability</text>
+<text x="216.6" y="258.9" class="ls ls-acc" text-anchor="middle">รายงานอย่างโปร่งใส</text>
+<text x="216.6" y="277.9" class="ls ls-acc" text-anchor="middle">พร้อม Corrective & Preventive Action</text>
+</a>
+<text x="540" y="314" class="lc1" text-anchor="middle">President &amp; Group COO</text>
+<text x="540" y="340" class="lc2" text-anchor="middle">Approve and work with and through</text>
+</svg></div>
+  <p class="loopnote">ผลจากข้อ 3 ยังป้อนกลับไปที่ข้อ 1.2 เพื่อทบทวนกลยุทธ์ (Strategic Review และ Emerging Strategies) และรายงานในข้อ 4 กลับไปที่ Board เป็นข้อมูลสำหรับรอบถัดไป กดกล่องแต่ละข้อเพื่อไปยังหน้าที่ข้อนั้น</p>
+</div></section>
+
+<dialog id="findings" class="fdlg" aria-label="ข้อสังเกต"><div class="fbox"><button class="fclose" id="fclose">ปิด</button>
+  <div class="sec-head">
+    <div class="eyebrow">ข้อสังเกต</div>
+    <h2>จุดที่ภาพกับเอกสารยังไม่ตรงกัน</h2>
+    <p>ข้อเสนอเพื่อปรับปรุงเอกสาร เรียงจากประเด็นเนื้อหาไปถึงการพิมพ์</p>
+  </div>
+  <div class="findings">
+    <div class="find"><span class="lvl">เนื้อหา</span><h3>ไม่มีภาพหรือคำนิยามของ “6 Revenue Stream Type” และ “5 Digital Architecture Model”</h3><p>ข้อ 2.2 อ้างตัวเลขทั้งสองแต่ไม่มีรายการประกอบในโฟลเดอร์ ผู้อ่านเอกสารจะไม่รู้ว่าหมายถึงอะไร ควรแนบภาคผนวก</p></div>
+  </div>
+</div></dialog>
+</main>
+
+<footer><div class="wrap"><button type="button" id="fopen" class="flink">ข้อสังเกต: จุดที่ภาพกับเอกสารยังไม่ตรงกัน</button><br>ที่มา: เอกสารบทบาทหน้าที่ President และภาพในโฟลเดอร์ President &amp; Group COO · Tricker Model (Bob Tricker) · Mintzberg, “Of Strategies, Deliberate and Emergent” · Armstrong, <i>A Handbook of Management Techniques</i>, Second Edition</div></footer>
+
+
+<dialog id="cmodal" class="fdlg" aria-labelledby="cm-title"><div class="fbox"><button class="fclose" id="cmclose">ปิด</button><div id="cmbody"></div></div></dialog>
+<dialog id="zoom" aria-label="ภาพขยาย"><button class="close" id="zclose">ปิด</button><img id="zimg" alt=""></dialog>
+
+<script>
+const Q={
+  str:{name:"Strategy formulation",color:"var(--q-str)",focus:"External · Performance · Future",
+    board:["ร่วมกำหนด ปรับ และติดตามกลยุทธ์กับฝ่ายบริหารระดับสูง","กำกับให้มีการเปิดเผยทิศทางกลยุทธ์ต่อผู้ถือหุ้นอย่างเหมาะสม (One Report, AGM)","อนุมัติแผนกลยุทธ์และแผนประจำปี","กำหนดเป้าหมายหลัก: Financial, Physical, Intellectual Capital, ESG, Risk"],
+    short:["ข้อ 1.1 พัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ)", "ข้อ 1.1 ร่วมพัฒนาแผนธุรกิจ เพื่อก้าวสู่ Platform Capitalism และ Ecosystem Capitalism", "ข้อ 1.1 พัฒนาแนวทางสร้างความมั่งคั่ง ผ่านบริษัทย่อยและ Holding Company", "ข้อ 1.2 ถ่ายทอดกลยุทธ์สู่ระดับธุรกิจและระดับหน่วยงาน", "ข้อ 1.2 ติดตามผลเทียบกลยุทธ์ เพื่อหากลยุทธ์ที่ไม่เป็นไปตามแผน", "ข้อ 1.2 ประเมินแนวทางใหม่ (Emerging Strategies) เพื่อเสนอปรับกลยุทธ์"],
+    pres:["ข้อ 1.1 ประสานงานกับ VP, CEO-RS และ C-Level เพื่อพัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ) ให้สอดคล้องกับ Vision และ Corporate Objectives", "ข้อ 1.1 ร่วมพัฒนาแผนธุรกิจ Short-term & Long-term ที่มุ่งเปลี่ยน Business Model จาก Industrial Capitalism สู่ Platform Capitalism และ Ecosystem Capitalism เพื่อเพิ่ม Distinctive Competency และ Competitiveness", "ข้อ 1.1 พัฒนาแนวทาง Wealth Creation ของกลุ่มบริษัท: ผ่านบริษัทย่อย (Business Synergy) และผ่าน Holding Company (Investment, Leasing, Lending, Reinvestment และการจัดสรรผลตอบแทน)", "ข้อ 1.2 สื่อสารและถ่ายทอด Corporate Strategy สู่ Business & Functional Level พร้อมเป้าหมาย แผนงาน งบประมาณ และตัวชี้วัด", "ข้อ 1.2 ติดตามผลการดำเนินงานเทียบกับกลยุทธ์ (Strategic Review) เพื่อระบุ Non-realized Strategies", "ข้อ 1.2 ประเมิน Emerging Strategies ระหว่างการดำเนินงาน เพื่อเสนอปรับกลยุทธ์ให้สอดคล้องกับสถานการณ์"],
+    map:"ภาพ การวางแผนกลยุทธ์ 4 ระยะ, Wealth Creation, Levels of Strategy, Mintzberg Strategy Cycle"},
+  pol:{name:"Policy making",color:"var(--q-pol)",focus:"Internal · Performance · Future",
+    board:["กำหนดนโยบายรองรับกลยุทธ์ในสภาพแวดล้อมที่เปลี่ยนแปลง","อนุมัติงบประมาณ","อนุมัติ Code of Conduct และสร้างวัฒนธรรมองค์กร","กำหนดนโยบายค่าตอบแทนผู้บริหารระดับสูง"],
+    short:["ข้อ 2.1 พัฒนานโยบายกลุ่ม เสนอ Executive Committee และ Board อนุมัติ", "ข้อ 2.1 ประยุกต์ Management Techniques สร้าง Management Architecture Model", "ข้อ 2.2 พัฒนา 6 Revenue Stream Type Platform เชื่อมโยงกับ 5 Digital Architecture Model"],
+    pres:["ข้อ 2.1 พัฒนานโยบายของกลุ่มบริษัท เสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors อนุมัติ", "ข้อ 2.1 Adopt & apply Management Techniques 9 ด้าน เพื่อจัดทำ Management Architecture Model (จาก Spaghetti สู่ Architecture) เป็นฐานรองรับ Platform และยกระดับ Efficiency ของกลุ่มบริษัท", "ข้อ 2.2 พัฒนา 6 Revenue Stream Type Platform เชื่อมโยงกับ 5 Digital Architecture Model โดยบูรณาการ Resources & Capabilities, Systems และ Work Processes เพื่อรองรับ Business Model Transformation"],
+    map:"ภาพ Armstrong Handbook, DE & DBTP"},
+  mon:{name:"Monitoring & Supervision",color:"var(--q-mon)",focus:"Internal · Conformance · Past & Present",
+    board:["ติดตามว่ากลยุทธ์ถูกนำไปใช้ตามที่ตั้งใจและได้ผล","ทบทวนผลด้าน Financial, Intellectual Capital, ESG, Risk","กำกับว่านโยบายถูกแปลงและปฏิบัติตาม"],
+    short:["ข้อ 3.1 พัฒนา Governance Platform (Single Source of Truth) ติดตาม Performance, Compliance, Risk, Internal Control และแจ้งเตือน Exception"],
+    pres:["ข้อ 3.1 พัฒนา Governance Platform เพื่อติดตามผลการดำเนินงาน (Performance) การปฏิบัติตามกฎเกณฑ์ (Compliance) การบริหารความเสี่ยง (Risk Management) การควบคุมภายใน (Internal Control) และรายการผิดปกติ (Exception) สนับสนุนการตัดสินใจของฝ่ายบริหารและ Board of Directors"],
+    map:"ภาพ Tricker Model (ช่อง Monitoring and Supervision)"},
+  acc:{name:"Providing accountability",color:"var(--q-acc)",focus:"External · Conformance · Past & Present",
+    board:["รายงานต่อใคร อะไร อย่างไร","สื่อสารกับผู้ถือหุ้นและผู้มีส่วนได้เสีย","เลือกผู้บริหารหลักและวางแผนสืบทอด","ควบคุมองค์กรในภาวะวิกฤต"],
+    short:["ข้อ 4.1 กำหนดรูปแบบและรอบการรายงาน โดยใช้ข้อมูลจาก Governance Platform", "ข้อ 4.1 รายงานผลที่ไม่ถึงเป้าอย่างโปร่งใส พร้อมแนวทางแก้ไขและป้องกัน", "ข้อ 4.2 สนับสนุนการตรวจสอบ และติดตามการแก้ไข Audit Findings", "ข้อ 5 ปฏิบัติหน้าที่อื่นตามที่ Board / Executive Committee มอบหมาย"],
+    pres:["ข้อ 4.1 กำหนดรูปแบบและรอบการรายงาน", "ข้อ 4.1 รายงาน Performance Gap และ Exception", "ข้อ 4.2 Audit Support", "ข้อ 5 Other Duties"],
+    map:"ภาพ Tricker Model"}
+};
+
+const TT={'1.1':'Business Model Transformation & Wealth Creation','1.2':'Strategy Communication, Monitoring & Review','2.1':'Policy Making & Management Techniques','2.2':'Platform Development','3.1':'Performance Monitoring','4.1':'Reporting Integrity & Transparency','4.2':'Audit Support','5':'Other Duties'};
+function groupPres(list){const g=[];list.forEach(x=>{const m=x.match(/^ข้อ (\d)(\.\d)?\s+/);const ref=m?m[1]+(m[2]||''):'';const t=m?x.slice(m[0].length):x;const l=g[g.length-1];if(l&&l.ref===ref)l.items.push(t);else g.push({ref,sec:m?m[1]:'',items:[t]});});return g;}
+document.querySelectorAll('.q').forEach(b=>{const ql=b.querySelector('.ql');if(!ql)return;const esc=x=>x.replace(/&/g,'&amp;');ql.innerHTML=groupPres(Q[b.dataset.q].short||Q[b.dataset.q].pres).map(g=>`<span class="grp" data-ref="${g.ref}" role="button" tabindex="0"><a class="ref" href="#r${g.sec}">ข้อ ${g.ref} · ${esc(TT[g.ref]||'')}</a>${g.items.map(t=>`<span class="li">${esc(t)}</span>`).join('')}</span>`).join('');});
+const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
+document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{zi.src=b.dataset.zoom;zi.alt=b.querySelector('img').alt;dlg.showModal()}));
+const CL={"1.1": {"q": "str", "b": ["ประสานงานกับ VP, CEO-RS และ C-Level เพื่อพัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ) ให้สอดคล้องกับ Vision และ Corporate Objectives", "ร่วมพัฒนาแผนธุรกิจที่มุ่งเปลี่ยนผ่าน Business Model จาก Industrial Capitalism สู่ Platform Capitalism และ Ecosystem Capitalism เพื่อเพิ่ม Distinctive Competency และ Competitiveness", "พัฒนาแนวทางสร้างความมั่งคั่ง (Wealth Creation) ของกลุ่มบริษัท<ul><li><b>ผ่านบริษัทย่อย:</b> ส่งเสริม Business Synergy สร้างผลตอบแทนจากการดำเนินธุรกิจ</li><li><b>ผ่าน Holding Company:</b> ใช้ประโยชน์จาก Tangible &amp; Intangible Assets สร้างผลตอบแทนจาก Investment, Leasing, Lending, Reinvestment และจัดสรรผลตอบแทนแก่ผู้มีส่วนได้เสียตามความเหมาะสม</li></ul>"], "note": "ทั้งนี้ Corporate Strategy แผนธุรกิจ และแนวทาง Wealth Creation ข้างต้น ให้นำเสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ ภายใต้กรอบอำนาจอนุมัติและกฎหมายที่เกี่ยวข้อง", "img": [["four-phases.jpg", "การวางแผนกลยุทธ์ 4 ระยะ"], ["wealth.jpg", "Wealth Creation"]]}, "1.2": {"q": "str", "b": ["ประสานงานกับ VP, CEO-RS และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการสื่อสารและถ่ายทอด Corporate Strategy ที่ได้รับอนุมัติไปสู่ Business Level Strategy และ Functional Level Strategy โดยให้มีการกำหนดเป้าหมาย แผนงาน งบประมาณ ตัวชี้วัด และมีการดำเนินงานในส่วนที่เกี่ยวข้องอย่างชัดเจน", "ติดตามผลการดำเนินงานเทียบกับกลยุทธ์ (Strategic Review) เพื่อระบุกลยุทธ์ที่ไม่เป็นไปตามแผน (Non-realized Strategies)", "ประเมินแนวทางใหม่ระหว่างการดำเนินงาน (Emerging Strategies) เพื่อเสนอปรับกลยุทธ์ให้สอดคล้องกับสถานการณ์ที่เปลี่ยนแปลง"], "img": [["levels.jpg", "Levels of Strategy"], ["mintzberg2.jpg", "Mintzberg Strategy Cycle"]]}, "2.1": {"q": "pol", "b": ["ประสาน VP ที่เกี่ยวข้องในการพัฒนานโยบายของกลุ่มบริษัท เพื่อนำเสนอต่อ Executive Committee เพื่อกลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ", "ประสานงานกับ VP Intellectual Capital และ C-Level ของบริษัทย่อยที่เกี่ยวข้องในการประยุกต์ใช้ Management Techniques เป็นหลักในการบริหารจัดการ ครอบคลุม Strategy, Marketing, Operations (TQM), Finance, Human Resources, Planning &amp; Resource Allocation, Information Technology, Management Science และ Efficiency &amp; Effectiveness เพื่อจัดทำเป็น Management Architecture Model เป็นฐานรองรับการพัฒนา Platform ยกระดับ Efficiency ของกลุ่มบริษัท"], "img": []}, "2.2": {"q": "pol", "b": ["ประสานงานกับ VP Intellectual Capital และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการพัฒนา 6 Revenue Stream Type Platform เชื่อมโยงกับ 5 Digital Architecture Model โดยบูรณาการ Resources &amp; Capabilities, Systems และ Work Processes ภายใต้กรอบ Management Techniques ที่พัฒนาตามข้อ 2.1 เพื่อรองรับ Business Model Transformation ตาม Corporate Strategy"], "img": [["dbtp.jpg", "Digital Engineering (DE) & DBTP"]]}, "3.1": {"q": "mon", "b": ["ประสานงานกับ VP Governance &amp; Sustainability และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการพัฒนา Governance Platform เป็นแหล่งข้อมูลเดียวกัน (Single Source of Truth) เพื่อกำกับติดตาม Performance, Compliance, Risk Management และ Internal Control พร้อมระบุและแจ้งเตือน Exception และใช้เป็นฐานการรายงานต่อ Executive Committee และ Board of Directors"], "img": [["tricker.jpg", "Tricker Model · ช่อง Monitoring and Supervision", [7.25, 48.35, 46.88, 44.02]]]}, "4.1": {"q": "acc", "b": ["กำหนดรูปแบบและรอบการรายงานต่อ Executive Committee และ Board of Directors โดยใช้ข้อมูลจาก Governance Platform ซึ่งเป็นแหล่งข้อมูลเดียวกัน (Single Source of Truth) ของกลุ่มบริษัท เพื่อให้ข้อมูลถูกต้อง ครบถ้วน และทันเวลา", "รายงาน Performance Gap และ Exception อย่างโปร่งใส พร้อมอธิบายสาเหตุ ผลกระทบ และ Corrective &amp; Preventive Action"], "img": []}, "4.2": {"q": "acc", "b": ["สนับสนุนการเข้าถึงข้อมูลของ Internal / External Audit และ Audit Committee รวมถึงจัดให้มีระบบติดตามและรายงานความคืบหน้าการแก้ไข Audit Findings อย่างสม่ำเสมอ"], "img": []}, "5": {"q": "acc", "b": ["ปฏิบัติหน้าที่อื่นใดตามที่ได้รับมอบหมายจาก Board of Directors และ/หรือ Executive Committee ภายใต้ขอบเขตอำนาจ"], "img": []}};
+const cm=document.getElementById('cmodal'),cmb=document.getElementById('cmbody');
+const KW={"1.1": ["Corporate Strategy", "แผน 4 ระยะ", "Business Model", "Platform Capitalism", "Ecosystem Capitalism", "Wealth Creation", "บริษัทย่อย:", "Business Synergy", "Holding Company:", "แผนธุรกิจ"], "1.2": ["สื่อสารและถ่ายทอด Corporate Strategy", "Business Level Strategy", "Functional Level Strategy", "Strategic Review", "Non-realized Strategies", "Emerging Strategies", "เสนอปรับกลยุทธ์"], "2.1": ["พัฒนานโยบายของกลุ่มบริษัท", "Executive Committee", "Board of Directors", "Management Techniques", "Management Architecture Model", "Efficiency"], "2.2": ["6 Revenue Stream Type Platform", "5 Digital Architecture Model", "Resources & Capabilities", "Work Processes", "Business Model Transformation"], "3.1": ["Governance Platform", "แหล่งข้อมูลเดียวกัน (Single Source of Truth)", "Performance", "Compliance", "Risk Management", "Internal Control", "ระบุและแจ้งเตือน Exception", "ฐานการรายงาน"], "4.1": ["รูปแบบและรอบการรายงาน", "ใช้ข้อมูลจาก Governance Platform ซึ่งเป็นแหล่งข้อมูลเดียวกัน (Single Source of Truth)", "Performance Gap", "Exception", "Corrective & Preventive Action"], "4.2": ["Internal / External Audit", "Audit Committee", "Audit Findings"], "5": ["Board of Directors", "Executive Committee", "ภายใต้ขอบเขตอำนาจ"]};
+function hl(html,kws){const esc=x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/&/g,'(?:&amp;|&)');const re=new RegExp('('+kws.slice().sort((a,b)=>b.length-a.length).map(esc).join('|')+')','g');return html.split(/(<[^>]+>)/).map(t=>t.startsWith('<')?t:t.replace(re,'<mark class="kw">$1</mark>')).join('');}
+function openClause(r){const c=CL[r];if(!c)return;const q=Q[c.q];
+  cm.dataset.q=c.q;cmb.innerHTML=`<div class="sec-head" style="margin-bottom:16px"><span class="eyebrow" style="color:${q.color}">${q.name.replace('&','&amp;')} · Tricker Model</span><h2 id="cm-title">ข้อ ${r} · ${TT[r].replace(/&/g,'&amp;')}</h2></div>
+  <ul class="cm-list">${c.b.map(x=>`<li>${hl(x,KW[r]||[])}</li>`).join('')}</ul>${c.note?`<p class="cm-note">${c.note}</p>`:''}
+  ${c.img.length?`<div class="cm-imgs">${c.img.map(([f,t,bx])=>bx?`<figure class="hlfig"><button data-zoom="img/${f}" aria-label="ขยายภาพ ${t}"><span class="hlwrap"><img src="img/${f}" alt="${t}"><span class="hlbox" style="left:${bx[0]}%;top:${bx[1]}%;width:${bx[2]}%;height:${bx[3]}%"></span></span></button><figcaption>${t}</figcaption></figure>`:`<figure><button data-zoom="img/${f}" aria-label="ขยายภาพ ${t}"><img src="img/${f}" alt="${t}"></button><figcaption>${t}</figcaption></figure>`).join('')}</div>`:''}
+  <p style="margin-top:16px"><a href="#r${r[0]}" class="cm-go">ไปที่หน้าที่ข้อ ${r[0]} ในหน้านี้ →</a></p>`;
+  cmb.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{zi.src=b.dataset.zoom;zi.alt=b.querySelector('img').alt;dlg.showModal()}));
+  cmb.querySelector('.cm-go').addEventListener('click',()=>cm.close());
+  cm.showModal();}
+document.getElementById('cmclose').addEventListener('click',()=>cm.close());
+cm.addEventListener('click',e=>{if(e.target===cm)cm.close()});
+document.querySelectorAll('.ql .grp').forEach(g=>{const go=e=>{e.preventDefault();openClause(g.dataset.ref)};g.addEventListener('click',go);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')go(e)});});
+document.getElementById('zclose').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+const fd=document.getElementById('findings');
+document.getElementById('fopen').addEventListener('click',()=>fd.showModal());
+document.getElementById('fclose').addEventListener('click',()=>fd.close());
+fd.addEventListener('click',e=>{if(e.target===fd)fd.close()});
+
+(function(){const links=[...document.querySelectorAll('nav.top a[href^="#"]')];const nav=document.querySelector('nav.top .wrap');
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function update(){const y=window.scrollY+110;let cur=null;secs.forEach(sec=>{if(sec.offsetTop<=y)cur=sec});
+ if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)cur=secs[secs.length-1];
+ links.forEach(a=>{const on=cur&&a.getAttribute('href')==='#'+cur.id;a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');const l=a.offsetLeft,r=l+a.offsetWidth;if(l<nav.scrollLeft||r>nav.scrollLeft+nav.clientWidth)nav.scrollTo({left:l-16,behavior:'smooth'});}else a.removeAttribute('aria-current');});}
+let t=null;window.addEventListener('scroll',()=>{if(t)return;t=requestAnimationFrame(()=>{t=null;update()})},{passive:true});update();})();
+</script>
+
+</body>
+</html>
