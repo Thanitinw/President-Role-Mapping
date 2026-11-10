@@ -305,14 +305,21 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 .quad .q{border:1.5px solid var(--ink)!important}
 .q.acc .qn,.q.acc .ref,.q.acc a.ref{color:var(--ink)!important}
 .cm-x{margin-top:18px;display:grid;gap:12px;font-size:1.02rem}.cm-x .link-list{margin:0}.cm-h{margin:6px 0 0;font-family:var(--f-display);font-size:1.1rem}
+.ql .ref{display:flex!important;align-items:center;gap:8px;flex-wrap:wrap}
+.ql .go{margin-left:auto;display:inline-flex;align-items:center;gap:3px;font-family:var(--f-body);font-size:.72rem;font-weight:600;padding:2px 9px 2px 10px;border-radius:999px;border:1px solid currentColor;background:var(--surface);white-space:nowrap;opacity:.8;transition:opacity .15s,transform .15s}
+.ql .grp{border:1px solid transparent}
+.ql .grp:hover,.ql .grp:focus-visible{background:var(--surface);border-color:var(--line);box-shadow:0 2px 8px rgba(0,0,0,.08);outline:none}
+.ql .grp:hover .go,.ql .grp:focus-visible .go{opacity:1;transform:translateX(2px)}
+.q.str .go{color:var(--q-str)}.q.pol .go{color:var(--q-pol)}.q.mon .go{color:var(--q-mon)}.q.acc .go{color:var(--ink)}
+.clickhint{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:8px 12px;border-radius:8px;background:var(--navy-soft);color:var(--navy);font-size:.9rem;font-weight:500}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
   <a href="#tricker">Tricker Model</a>
-  <a href="#tricker" data-open="1.1">1 · Strategy Formulation</a>
-  <a href="#tricker" data-open="2.1">2 · Strategy Execution</a>
-  <a href="#tricker" data-open="3.1">3 · Monitoring</a>
-  <a href="#tricker" data-open="4.1">4 · Accountability</a>
+  <a href="#open-1.1" data-open="1.1">1 · Strategy Formulation</a>
+  <a href="#open-2.1" data-open="2.1">2 · Strategy Execution</a>
+  <a href="#open-3.1" data-open="3.1">3 · Monitoring</a>
+  <a href="#open-4.1" data-open="4.1">4 · Accountability</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -348,7 +355,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
       <figure><button data-zoom="img/tricker.jpg" aria-label="ขยายภาพ Tricker Model"><img src="img/tricker.jpg" alt="ตาราง Tricker Model ฉบับเต็ม แสดงรายละเอียดบทบาท Board ทั้ง 4 ช่อง" loading="lazy"></button><figcaption>Tricker Model (ฉบับรายละเอียด).jpg · กดเพื่อขยาย</figcaption></figure>
     </div>
     <div class="tmatrix">
-      <div class="matrix" role="group" aria-label="Tricker Model">
+      <p class="clickhint"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a5 5 0 0 1-4.2-2.3L4.5 15a1.5 1.5 0 0 1 2.4-1.8L9 15.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>กดที่หัวข้อแต่ละข้อในตาราง เพื่อเปิดรายละเอียดฉบับเต็ม ภาพ และแผนภาพประกอบ</p><div class="matrix" role="group" aria-label="Tricker Model">
         <span style="grid-column:2;grid-row:1" class="ax">Conformance focus</span><span style="grid-column:3;grid-row:1" class="ax">Performance focus</span>
         <span style="grid-column:1;grid-row:2" class="ax v">External</span>
         <span style="grid-column:1;grid-row:3" class="ax v">Internal</span>
@@ -361,7 +368,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
         <span style="grid-column:2;grid-row:4" class="ax">Past &amp; Present focus</span><span style="grid-column:3;grid-row:4" class="ax">Future focus</span>
         <div class="ceo" style="grid-column:2/4;grid-row:5">⇄ Work with and through the President &amp; Group COO</div>
       </div>
-      <p class="mono" style="margin-top:10px">กดหัวข้อหรือข้อความในแต่ละช่อง เพื่อเปิดรายละเอียดฉบับเต็มของข้อนั้น</p>
+      
     </div>
   </div>
 </div></section>
@@ -445,7 +452,7 @@ const Q={
 
 const TT={'1.1':'Business Model Transformation & Wealth Creation','1.2':'Strategy Communication & Review','2.1':'Policy Making & Management Techniques','2.2':'Platform Development','3.1':'Performance Monitoring','4.1':'Reporting Integrity & Transparency','4.2':'Audit Support'};
 function groupPres(list){const g=[];list.forEach(x=>{const m=x.match(/^ข้อ (\d)(\.\d)?\s+/);const ref=m?m[1]+(m[2]||''):'';const t=m?x.slice(m[0].length):x;const l=g[g.length-1];if(l&&l.ref===ref)l.items.push(t);else g.push({ref,sec:m?m[1]:'',items:[t]});});return g;}
-document.querySelectorAll('.q').forEach(b=>{const ql=b.querySelector('.ql');if(!ql)return;const esc=x=>x.replace(/&/g,'&amp;');ql.innerHTML=groupPres(Q[b.dataset.q].short||Q[b.dataset.q].pres).map(g=>`<span class="grp" data-ref="${g.ref}" role="button" tabindex="0"><a class="ref" href="#tricker">ข้อ ${g.ref} · ${esc(TT[g.ref]||'')}</a>${g.items.map(t=>`<span class="li">${esc(t)}</span>`).join('')}</span>`).join('');});
+document.querySelectorAll('.q').forEach(b=>{const ql=b.querySelector('.ql');if(!ql)return;const esc=x=>x.replace(/&/g,'&amp;');ql.innerHTML=groupPres(Q[b.dataset.q].short||Q[b.dataset.q].pres).map(g=>`<span class="grp" data-ref="${g.ref}" role="button" tabindex="0"><a class="ref" href="#tricker"><span>ข้อ ${g.ref} · ${esc(TT[g.ref]||'')}</span><span class="go">ดูเพิ่ม <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>${g.items.map(t=>`<span class="li">${esc(t)}</span>`).join('')}</span>`).join('');});
 const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
 document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{zi.src=b.dataset.zoom;zi.alt=b.querySelector('img').alt;dlg.showModal()}));
 const CL={"1.1": {"q": "str", "b": ["ประสานงานกับ VP, CEO-RS และ C-Level เพื่อพัฒนาและทบทวน Corporate Strategy (แผน 4 ระยะ) ให้สอดคล้องกับ Vision และ Corporate Objectives", "ร่วมพัฒนาแผนธุรกิจที่มุ่งเปลี่ยนผ่าน Business Model จาก Industrial Capitalism สู่ Platform Capitalism และ Ecosystem Capitalism เพื่อเพิ่ม Distinctive Competency และ Competitiveness", "พัฒนาแนวทางสร้างความมั่งคั่ง (Wealth Creation) ของกลุ่มบริษัท<ul><li><b>ผ่านบริษัทย่อย:</b> ส่งเสริม Business Synergy สร้างผลตอบแทนจากการดำเนินธุรกิจ</li><li><b>ผ่าน Holding Company:</b> ใช้ประโยชน์จาก Tangible &amp; Intangible Assets สร้างผลตอบแทนจาก Investment, Leasing, Lending, Reinvestment และจัดสรรผลตอบแทนแก่ผู้มีส่วนได้เสียตามความเหมาะสม</li></ul>"], "note": "ทั้งนี้ Corporate Strategy แผนธุรกิจ และแนวทาง Wealth Creation ข้างต้น ให้นำเสนอ Executive Committee กลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ ภายใต้กรอบอำนาจอนุมัติและกฎหมายที่เกี่ยวข้อง", "img": [["four-phases.jpg", "การวางแผนกลยุทธ์ 4 ระยะ"], ["wealth.jpg", "Wealth Creation"]]}, "1.2": {"q": "str", "b": ["ประสานงานกับ VP, CEO-RS และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการสื่อสารและถ่ายทอด Corporate Strategy ที่ได้รับอนุมัติไปสู่ Business Level Strategy และ Functional Level Strategy โดยให้มีการกำหนดเป้าหมาย แผนงาน งบประมาณ ตัวชี้วัด และมีการดำเนินงานในส่วนที่เกี่ยวข้องอย่างชัดเจน", "ติดตามผลการดำเนินงานเทียบกับกลยุทธ์ (Strategic Review) เพื่อระบุกลยุทธ์ที่ไม่เป็นไปตามแผน (Non-realized Strategies) เพื่อประเมินแนวทางใหม่ระหว่างการดำเนินงาน (Emerging Strategies) และเสนอปรับกลยุทธ์ให้สอดคล้องกับสถานการณ์ที่เปลี่ยนแปลง"], "img": [["levels.jpg", "Levels of Strategy"], ["mintzberg2.jpg", "Mintzberg Strategy Cycle"]]}, "2.1": {"q": "pol", "b": ["ประสาน VP ที่เกี่ยวข้องในการพัฒนานโยบายของกลุ่มบริษัท เพื่อนำเสนอต่อ Executive Committee เพื่อกลั่นกรอง ก่อนเสนอ Board of Directors พิจารณาอนุมัติ", "ประสานงานกับ VP Intellectual Capital และ C-Level ของบริษัทย่อยที่เกี่ยวข้องในการประยุกต์ใช้ Management Techniques เป็นหลักในการบริหารจัดการ ครอบคลุม Strategy, Marketing, Operations (TQM), Finance, Human Resources, Planning &amp; Resource Allocation, Information Technology, Management Science และ Efficiency &amp; Effectiveness เพื่อจัดทำเป็น Management Architecture Model เป็นฐานรองรับการพัฒนา Platform ยกระดับ Efficiency ของกลุ่มบริษัท"], "img": []}, "2.2": {"q": "pol", "b": ["ประสานงานกับ VP Intellectual Capital และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการพัฒนา Digital Business Technology Platform (DBTP) เป็นฐานกลางของกลุ่มบริษัท รองรับ 6 Revenue Stream Type และเชื่อมโยงกับ 5 Digital Architecture Model โดยบูรณาการ Resources &amp; Capabilities, Systems และ Work Processes ภายใต้กรอบ Management Techniques ที่พัฒนาตามข้อ 2.1 เพื่อรองรับ Business Model Transformation ตาม Corporate Strategy"], "img": [["dbtp-pillars.jpg", "DBTP Reference Architecture Pillars"]], "svg": "dg2", "pair": true}, "3.1": {"q": "mon", "b": ["ประสานงานกับ VP Governance &amp; Sustainability และ C-Level ของบริษัทย่อยที่เกี่ยวข้อง ในการพัฒนา Governance Platform ให้เป็นแหล่งข้อมูลกลาง (Single Source of Truth) สำหรับกำกับติดตาม Performance, Compliance, Risk Management และ Internal Control พร้อมระบบ Early Warning และติดตาม Exception เพื่อประกอบการตัดสินใจของฝ่ายบริหาร และกำกับให้หน่วยงานที่เกี่ยวข้องดำเนินการแก้ไขได้อย่างทันการณ์"], "img": [["tricker.jpg", "Tricker Model · ช่อง Monitoring and Supervision", [7.25, 48.35, 46.88, 44.02]]], "svg": "dg3"}, "4.1": {"q": "acc", "b": ["กำหนดรูปแบบและความถี่ในการรายงานผลการดำเนินงานต่อ Executive Committee และ/หรือ Board of Directors โดยใช้ข้อมูลจาก Single Source of Truth ใน Governance Platform ของกลุ่มบริษัท เพื่อให้ข้อมูลถูกต้อง ครบถ้วน และทันเวลา", "รายงาน Performance Gap, Early Warning และ Exception อย่างโปร่งใส พร้อมอธิบายสาเหตุ ผลกระทบ และ Corrective &amp; Preventive Action รวมถึงความคืบหน้าการแก้ไข"], "img": [], "svg": "dg4"}, "4.2": {"q": "acc", "b": ["สนับสนุนการเข้าถึงข้อมูลของ Internal / External Audit และ Audit Committee รวมถึงจัดให้มีระบบติดตามและรายงานความคืบหน้าการแก้ไข Audit Findings อย่างสม่ำเสมอ"], "img": [], "svg": "dg4"}};
