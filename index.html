@@ -554,7 +554,6 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 (function(){const order=['str','pol','mon','acc'];const st={};order.forEach(k=>st[k]={sub:0,task:0});
 Object.entries(CL).forEach(([r,c])=>{if(st[c.q]){st[c.q].sub++;st[c.q].task+=c.b.length}});
 const tot=order.reduce((a,k)=>a+st[k].task,0),subs=order.reduce((a,k)=>a+st[k].sub,0);
-document.querySelectorAll('.q[data-q]').forEach(b=>{const k=b.dataset.q;if(!st[k])return;const n=b.querySelector('.qn');const c=document.createElement('span');c.className='qc';c.textContent=st[k].sub+' ข้อย่อย · '+st[k].task+' ภาระงาน';n.after(c)});
 const w=document.createElement('div');w.className='wl';
 w.innerHTML='<div class="wl-h"><b>สรุปภาระงาน President</b><span>4 ข้อหลัก · '+subs+' ข้อย่อย · '+tot+' ภาระงาน</span></div><div class="wl-bar">'+order.map(k=>'<span class="wl-s wl-'+k+'" style="flex:'+st[k].task+'" title="'+Q[k].name+'">'+st[k].task+'</span>').join('')+'</div><div class="wl-lg">'+order.map(k=>'<span><i class="wl-d wl-'+k+'"></i>'+Q[k].name.replace('&','&amp;')+' <b>'+st[k].task+'</b> <em>('+Math.round(st[k].task*100/tot)+'%)</em></span>').join('')+'</div>';
 const tm=document.querySelector('.tmatrix');const mono=tm&&tm.querySelector('p.mono');if(tm)tm.insertBefore(w,mono)})();
