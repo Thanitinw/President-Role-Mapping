@@ -322,6 +322,31 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
 #cmodal .cm-imgs figure.wide{grid-column:1/-1}#cmodal .cm-imgs figure.wide img{height:auto!important;max-height:none!important;object-fit:contain;width:60%!important;margin:0 auto;display:block}
 #cmodal .cm-imgs.row2{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}#cmodal .cm-imgs.row2 figure{flex:0 0 auto;max-width:100%}#cmodal .cm-imgs.row2 figure img{height:300px!important;width:auto!important;max-width:100%;object-fit:contain}#cmodal .cm-imgs.row2 figure.wide{grid-column:auto}
 #cmodal .cm-imgs figure.wide.full img{width:80%!important}
+.printbtn{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:.86rem;font-weight:600;color:var(--navy);background:var(--surface);border:1px solid var(--navy);border-radius:999px;padding:5px 14px;cursor:pointer;white-space:nowrap}.printbtn:hover{background:var(--navy);color:var(--surface)}
+#printall{display:none}
+.pclause[data-q="str"] mark.kw{background:var(--q-str-bg);color:var(--q-str)}.pclause[data-q="pol"] mark.kw{background:var(--q-pol-bg);color:var(--q-pol)}.pclause[data-q="mon"] mark.kw{background:var(--q-mon-bg);color:var(--q-mon)}.pclause[data-q="acc"] mark.kw{background:var(--q-acc-bg);color:var(--ink)}
+@media print{
+ @page{size:A4;margin:12mm}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ nav.top,.printbtn,#cmodal,dialog,.go,.tlinks,#fopen,#cmpbtn{display:none!important}
+ body{background:#fff!important}
+ #printall{display:block}
+ .pa-h{break-before:page;margin:0 0 6mm}
+ .pclause{break-before:page;padding-top:2mm}
+ .pclause:first-of-type{break-before:avoid}
+ .pclause .cm-imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4mm}
+ .pclause .cm-imgs.row2{display:flex;flex-wrap:wrap}
+ .pclause .cm-imgs img{width:100%;height:auto!important;max-height:110mm;object-fit:contain}
+ .pclause .cm-imgs figure.wide,.pclause .cm-imgs figure.full{grid-column:1/-1}
+ .pclause .cm-imgs.row2 img{height:70mm!important;width:auto!important}
+ .pclause .cm-pair{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+ .pclause svg{max-width:100%;height:auto}
+ figure,svg,.dgm,.cm-foot,.wl,.quad{break-inside:avoid}
+ .pclause h2{font-size:18pt}
+ .hero{padding-block:4mm!important}
+ .tricker{display:block!important}.tmatrix{width:100%!important;max-width:none!important}
+ .pclause .cm-pair .cm-imgs img{max-height:80mm}
+}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -330,6 +355,7 @@ dialog .close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right
   <a href="#open-2" data-open="2.1">2 · Strategy Execution</a>
   <a href="#open-3" data-open="3.1">3 · Monitoring</a>
   <a href="#open-4" data-open="4.1">4 · Accountability</a>
+  <button type="button" class="printbtn" id="printbtn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 9V3h10v6M7 18H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>พิมพ์ / PDF</button>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -467,6 +493,19 @@ const tm=document.querySelector('.tmatrix');const mono=tm&&tm.querySelector('p.m
 document.querySelectorAll('nav.top a[data-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openClause(a.dataset.open)}));
 (()=>{const t=document.getElementById('tview');if(t)t.addEventListener('click',()=>{zi.src='img/tricker.jpg';zi.alt='ตาราง Tricker Model ฉบับเต็ม';dlg.showModal()})})();
 (()=>{const b=document.getElementById('cmpbtn'),x=document.getElementById('cmpbox');if(b&&x)b.addEventListener('click',()=>{const o=x.hidden;x.hidden=!o;b.setAttribute('aria-expanded',String(o));b.classList.toggle('open',o)})})();
+(()=>{const pb=document.getElementById('printbtn');if(!pb)return;
+function build(){let pa=document.getElementById('printall');if(pa)pa.remove();pa=document.createElement('div');pa.id='printall';
+ pa.innerHTML='<h2 class="pa-h">รายละเอียดบทบาทหน้าที่แต่ละข้อ</h2>';let lastSvg=null;
+ ['1.1','1.2','2.1','2.2','3.1','3.2','4.1','4.2'].forEach(r=>{if(!CL[r])return;openClause(r);const sec=document.createElement('section');sec.className='pclause';sec.dataset.q=CL[r].q;sec.innerHTML=cmb.innerHTML;cm.close();
+  if(CL[r].svg&&CL[r].svg===lastSvg)sec.querySelectorAll('.cm-dg').forEach(e=>e.remove());lastSvg=CL[r].svg||null;
+  sec.querySelectorAll('button[data-zoom]').forEach(b=>{const s=document.createElement('span');s.innerHTML=b.innerHTML;b.replaceWith(s)});
+  pa.appendChild(sec)});
+ document.querySelector('main')?document.querySelector('main').appendChild(pa):document.body.insertBefore(pa,document.querySelector('footer'));return pa}
+let cmpWas=null;
+pb.addEventListener('click',()=>{build();const x=document.getElementById('cmpbox');if(x){cmpWas=x.hidden;x.hidden=false}
+ setTimeout(()=>{try{window.print()}catch(e){}},150)});
+window.addEventListener('afterprint',()=>{const pa=document.getElementById('printall');if(pa)pa.remove();const x=document.getElementById('cmpbox');if(x&&cmpWas!==null){x.hidden=cmpWas;cmpWas=null}});
+})();
 const fd=document.getElementById('findings');
 document.getElementById('fopen').addEventListener('click',()=>fd.showModal());
 document.getElementById('fclose').addEventListener('click',()=>fd.close());
