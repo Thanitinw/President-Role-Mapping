@@ -527,7 +527,9 @@ function build(){let pa=document.getElementById('printall');if(pa)pa.remove();pa
   pa.appendChild(sec)});
  document.querySelector('main')?document.querySelector('main').appendChild(pa):document.body.insertBefore(pa,document.querySelector('footer'));return pa}
 let cmpWas=null;
-pb.addEventListener('click',()=>{build();const x=document.getElementById('cmpbox');if(x){cmpWas=x.hidden;x.hidden=false}
+let dl=null;try{if(window.claude&&claude.use)claude.use('downloads').then(d=>{dl=d}).catch(()=>{})}catch(e){}
+pb.addEventListener('click',async()=>{if(dl){const old=pb.innerHTML;pb.disabled=true;pb.lastChild.textContent='กำลังเตรียม PDF…';try{const r=await fetch('role-mapping.pdf');if(!r.ok)throw 0;await dl.save({filename:'President & Group COO - Role Mapping.pdf',data:await r.blob()})}catch(e){}finally{pb.disabled=false;pb.innerHTML=old}return}
+ build();const x=document.getElementById('cmpbox');if(x){cmpWas=x.hidden;x.hidden=false}
  setTimeout(()=>{try{window.print()}catch(e){}},150)});
 window.addEventListener('afterprint',()=>{const pa=document.getElementById('printall');if(pa)pa.remove();const x=document.getElementById('cmpbox');if(x&&cmpWas!==null){x.hidden=cmpWas;cmpWas=null}});
 })();
