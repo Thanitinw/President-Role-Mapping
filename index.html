@@ -537,7 +537,11 @@ let cmpWas=null;
 let dl=null;try{if(window.claude&&claude.use)claude.use('downloads').then(d=>{dl=d}).catch(()=>{})}catch(e){}
 pb.addEventListener('click',async()=>{if(dl){const old=pb.innerHTML;pb.disabled=true;pb.lastChild.textContent='กำลังเตรียม PDF…';try{const r=await fetch('role-mapping.pdf');if(!r.ok)throw 0;await dl.save({filename:'President & Group COO - Role Mapping.pdf',data:await r.blob()})}catch(e){}finally{pb.disabled=false;pb.innerHTML=old}return}
  build();const x=document.getElementById('cmpbox');if(x){cmpWas=x.hidden;x.hidden=false}
- setTimeout(()=>{try{window.print()}catch(e){}},150)});
+ (async()=>{const old=pb.innerHTML;pb.disabled=true;pb.lastChild.textContent='กำลังโหลดรูป…';
+  const imgs=[...document.querySelectorAll('img')];imgs.forEach(i=>{i.loading='eager';i.decoding='sync'});
+  await Promise.race([Promise.all(imgs.map(i=>i.complete&&i.naturalWidth?0:new Promise(r=>{i.addEventListener('load',r,{once:true});i.addEventListener('error',r,{once:true})}))),new Promise(r=>setTimeout(r,8000))]);
+  await Promise.all(imgs.map(i=>i.decode?i.decode().catch(()=>{}):0));
+  pb.disabled=false;pb.innerHTML=old;setTimeout(()=>{try{window.print()}catch(e){}},100)})()});
 window.addEventListener('afterprint',()=>{const pa=document.getElementById('printall');if(pa)pa.remove();const x=document.getElementById('cmpbox');if(x&&cmpWas!==null){x.hidden=cmpWas;cmpWas=null}});
 })();
 const fd=document.getElementById('findings');
