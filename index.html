@@ -11,7 +11,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: governance dossier — one long read, each role section pairs the duty text (left) with the evidence images (right); Tricker quadrant colours tag every role */
 :root{
@@ -22,9 +22,9 @@
   --q-mon:#1F9D4C; --q-mon-bg:#E2F4E8;      /* Monitoring & supervision (green) */
   --q-pol:#E8860C; --q-pol-bg:#FDF0DE;      /* Policy making (orange) */
   --warn:#B4531A; --warn-bg:#FBEDE3;
-  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-display:"IBM Plex Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif;
   --f-body:"IBM Plex Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --f-mono:"IBM Plex Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0E1520; --surface:#162131; --ink:#E6ECF4; --muted:#9AA8BC; --line:#2A384C;
@@ -429,12 +429,12 @@ footer .glink{display:flex;width:max-content}
 .flow2{align-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;min-width:130px;font-size:.78rem;color:var(--muted)}.flow2 b{color:var(--navy);font-size:.9rem;margin-bottom:8px}
 @media print{.matrix .ax[style*="grid-row:4"]{padding-top:4mm!important;align-items:flex-start}.matrix .ax[style*="grid-row:1"]{padding-bottom:2mm!important}}
 @media print{.pgloss{break-before:page}.pgloss .gtbl{font-size:10pt}.pgloss .gtbl th,.pgloss .gtbl td{padding:2mm 3mm}.pgloss .gnote{font-size:9pt}}
+.rtab.cmpl{text-decoration:none;color:var(--navy);border-color:var(--navy);font-weight:600}.rtab.cmpl:hover{background:var(--navy);color:var(--surface)}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
-  <span class="rtab soon" title="อยู่ระหว่างจัดทำ" aria-disabled="true">Executive Committee<small>เร็ว ๆ นี้</small></span>
   <span class="rtab active" aria-current="page">President &amp; Group COO</span>
-  <span class="rtab soon" title="อยู่ระหว่างจัดทำ" aria-disabled="true">CEO-RS<small>เร็ว ๆ นี้</small></span>
+  <a class="rtab cmpl" href="compare.html">เปรียบเทียบ 3 บทบาท</a>
   <button type="button" class="gbtn" id="gopen" data-gopen title="คำกริยา (Decision Rights Glossary)" aria-label="เปิด Decision Rights Glossary"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h7M9 11.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
   <button type="button" class="printbtn" id="printbtn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 9V3h10v6M7 18H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>พิมพ์ / PDF</button>
 </div></nav>
