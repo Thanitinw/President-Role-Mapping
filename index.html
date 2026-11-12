@@ -547,7 +547,7 @@ const Q={
     map:"ภาพ Tricker Model"}
 };
 
-const TT={'1.1': 'PCC Strategy & Wealth Creation', '1.2': 'Subsidiary Strategy Alignment', '2.1': 'Policy & Management Standardization', '2.2': 'Platform & Ecosystem Capitalism', '3.1': 'Performance & Plan Review', '3.2': 'Work Assignment & Executive Limitations', '4.1': 'Actional & Exception Report', '4.2': 'Audit Support'};
+const TT={'1.1': 'Strategy & Wealth Creation', '1.2': 'Subsidiary Strategy Alignment', '2.1': 'Policy & Management Standardization', '2.2': 'Platform & Ecosystem Capitalism', '3.1': 'Performance & Plan Review', '3.2': 'Work Assignment & Executive Limitations', '4.1': 'Actional & Exception Report', '4.2': 'Audit Support'};
 function groupPres(list){const g=[];list.forEach(x=>{const m=x.match(/^ข้อ (\d)(\.\d)?\s+/);const ref=m?m[1]+(m[2]||''):'';const t=m?x.slice(m[0].length):x;const l=g[g.length-1];if(l&&l.ref===ref)l.items.push(t);else g.push({ref,sec:m?m[1]:'',items:[t]});});return g;}
 document.querySelectorAll('.q').forEach(b=>{const ql=b.querySelector('.ql');if(!ql)return;const esc=x=>x.replace(/&/g,'&amp;');ql.innerHTML=groupPres(Q[b.dataset.q].short||Q[b.dataset.q].pres).map(g=>`<span class="grp" data-ref="${g.ref}" role="button" tabindex="0"><a class="ref" href="#tricker"><span>ข้อ ${g.ref} · ${esc(TT[g.ref]||'')}</span><span class="go">ดูเพิ่ม <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>${g.items.map(t=>`<span class="li">${esc(t)}</span>`).join('')}</span>`).join('');});
 const dlg=document.getElementById('zoom'),zi=document.getElementById('zimg');
