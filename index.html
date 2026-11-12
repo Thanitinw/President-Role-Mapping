@@ -426,6 +426,8 @@ footer .glink{display:flex;width:max-content}
 .cm-imgs figure.wide.full img{padding-top:28px}
 .docctl{display:none}
 @media print{.docctl{display:flex!important;flex-wrap:wrap;gap:2mm 6mm;font-size:8.5pt;color:#333;border:0.3mm solid #999;border-radius:2mm;padding:2.5mm 4mm;margin:0 0 5mm}.docctl span:first-child{width:100%}}
+.flow2{align-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;min-width:130px;font-size:.78rem;color:var(--muted)}.flow2 b{color:var(--navy);font-size:.9rem;margin-bottom:8px}
+@media print{.matrix .ax[style*="grid-row:4"]{padding-top:4mm!important;align-items:flex-start}.matrix .ax[style*="grid-row:1"]{padding-bottom:2mm!important}}
 </style>
 
 <nav class="top" aria-label="สารบัญ"><div class="wrap">
@@ -437,7 +439,7 @@ footer .glink{display:flex;width:max-content}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="docctl" data-rev="4" data-date="12 พ.ย. 2569"><span><b>Document Control</b></span><span>เอกสาร: บทบาทหน้าที่ President &amp; Group COO (Role Mapping)</span><span>Revision: <b>R4</b></span><span>วันที่ปรับปรุง: 12 พ.ย. 2569</span><span>สาระการปรับปรุง: ปรับคำกริยาตาม Decision Rights Glossary, แบ่ง Performance / Conformance Role และปรับถ้อยคำทุกข้อ</span></div>
+  <div class="docctl" data-date="12 พ.ย. 2569"><span><b>Document Control</b></span><span>เอกสาร: บทบาทหน้าที่ President &amp; Group COO (Role Mapping)</span><span>ปรับปรุงล่าสุด: 12 พ.ย. 2569</span><span>พิมพ์เมื่อ: <b class="pstamp"></b></span></div>
 
   <div class="eyebrow">บทบาทหน้าที่ President · วิเคราะห์เชื่อมโยงกับภาพประกอบ 9 ภาพ</div>
   <h1>President &amp; Group COO</h1>
@@ -447,14 +449,14 @@ footer .glink{display:flex;width:max-content}
       <div class="eyebrow">Board of Directors</div>
       <h3>กำหนดทิศทางและกำกับ</h3>
       <p>ใช้ Tricker Model เต็มรูปแบบ: Strategic Direction และ Corporate Oversight ตาม CG Code ของ ก.ล.ต.</p>
-      <div class="chips"><span class="chip">อนุมัติกลยุทธ์</span><span class="chip">อนุมัตินโยบาย/งบประมาณ</span><span class="chip">กำกับดูแล</span></div>
+      <div class="chips"><span class="chip">Determine ทิศทาง / DOA</span><span class="chip">Approve กลยุทธ์ / นโยบาย / งบประมาณ</span><span class="chip">Oversee</span></div>
     </div>
-    <div class="arrow"><b>⇄</b>Work with and through the President &amp; Group COO</div>
+    <div class="flow2"><b>Approve →</b><b>← Propose · Report</b></div>
     <div class="side pres">
       <div class="eyebrow">President &amp; Group COO</div>
       <h3>ขับเคลื่อนและรายงานผล</h3>
-      <p>ประยุกต์ Tricker Model เป็นกลไกบริหารกลุ่มบริษัท เน้น Strategy Execution และ Performance Monitoring &amp; Reporting เป็นระบบ</p>
-      <div class="chips"><span class="chip">พัฒนา/เสนอกลยุทธ์</span><span class="chip">พัฒนานโยบาย + Platform</span><span class="chip">ติดตาม + รายงาน</span></div>
+      <p>ประยุกต์ Tricker Model เป็นกลไกบริหาร แบ่งเป็น Performance Role (Strategy Formulation + Policy Making) และ Conformance Role (Monitoring &amp; Supervision + Providing Accountability)</p>
+      <div class="chips"><span class="chip">Review / Develop + Propose กลยุทธ์</span><span class="chip">Set Standard + Develop Platform</span><span class="chip">Monitor · Report · Escalate</span></div>
     </div>
   </div></div>
   
@@ -561,6 +563,7 @@ function openClause(r){const c=CL[r];if(!c)return;const q=Q[c.q];
   cmb.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{zi.src=b.dataset.zoom;zi.alt=b.querySelector('img').alt;dlg.showModal()}));
   cm.showModal();}
 (()=>{const g=document.getElementById('gdlg');document.addEventListener('click',e=>{const b=e.target.closest('[data-gopen]');if(b){e.preventDefault();e.stopPropagation();g.showModal()}},true);document.getElementById('gclose').addEventListener('click',()=>g.close());g.addEventListener('click',e=>{if(e.target===g)g.close()})})();
+(()=>{const st=()=>{const t=new Date().toLocaleString('th-TH',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})+' น.';document.querySelectorAll('.pstamp').forEach(e=>e.textContent=t);return t};window.__pstamp=st;st();window.addEventListener('beforeprint',st);const pb=document.getElementById('printbtn');if(pb)pb.addEventListener('click',st,true)})();
 document.getElementById('cmclose').addEventListener('click',()=>cm.close());
 cm.addEventListener('click',e=>{if(e.target===cm)cm.close()});
 document.querySelectorAll('.ql .grp').forEach(g=>{const go=e=>{e.preventDefault();openClause(g.dataset.ref)};g.addEventListener('click',go);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')go(e)});});
