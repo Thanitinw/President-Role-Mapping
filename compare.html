@@ -19,7 +19,8 @@ h1{font-size:26px;margin:0 0 4px;line-height:1.3}
 table.cmp{width:100%;border-collapse:collapse;min-width:900px;font-size:14px}
 .cmp th,.cmp td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}
 .cmp td+td,.cmp th+th{border-left:1px solid var(--line)}
-.cmp th{position:sticky;top:0;background:var(--card);font-size:15px;z-index:1}
+.cmp th{position:sticky;top:var(--navh,0px);background:var(--card);font-size:15px;z-index:2;box-shadow:inset 0 -1px 0 var(--line)}
+.tw{overflow:clip}@media (max-width:960px){.tw{overflow-x:auto}}
 .cmp th small{display:block;font-weight:400;font-size:12.5px;line-height:1.5;color:var(--mut);margin-top:4px}
 .cmp th.c0{width:10%}.cmp th.bd,.cmp th.ec,.cmp th.pr,.cmp th.rs{width:22.5%}.cmp th.bd{color:var(--bd);background:var(--bdbg)}
 .cmp th.ec{color:var(--ec);background:var(--ecbg)}.cmp th.pr{color:var(--pr);background:var(--prbg)}.cmp th.rs{color:var(--rs);background:var(--rsbg)}
@@ -71,6 +72,6 @@ dialog#gdlg::backdrop{background:rgba(10,15,25,.55)}
 <script>
 (()=>{const g=document.getElementById('gdlg');document.addEventListener('click',e=>{const b=e.target.closest('[data-gopen]');if(b){e.preventDefault();g.showModal()}});document.getElementById('gclose').addEventListener('click',()=>g.close());g.addEventListener('click',e=>{if(e.target===g)g.close()});
 let dl=null;try{if(window.claude&&claude.use)claude.use('downloads').then(d=>{dl=d}).catch(()=>{})}catch(e){}
-const pb=document.getElementById('printbtn');pb.addEventListener('click',async()=>{if(dl){try{const r=await fetch('role-comparison.pdf');if(!r.ok)throw 0;await dl.save({filename:'Role Comparison - Board EC President CEO-RS.pdf',data:await r.blob()})}catch(e){}return}window.print()})})();
+const nv=document.querySelector('nav.top');const sn=()=>document.documentElement.style.setProperty('--navh',(nv?nv.offsetHeight:0)+'px');sn();addEventListener('resize',sn);const pb=document.getElementById('printbtn');pb.addEventListener('click',async()=>{if(dl){try{const r=await fetch('role-comparison.pdf');if(!r.ok)throw 0;await dl.save({filename:'Role Comparison - Board EC President CEO-RS.pdf',data:await r.blob()})}catch(e){}return}window.print()})})();
 </script>
 </body></html>
