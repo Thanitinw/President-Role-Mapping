@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"><title>Subsidiary Governance</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f5f7fa;--card:#fff;--ink:#16202e;--mut:#5d6878;--line:#dbe1ea;--navy:#1f3d6b;--bd:#9a3b2e;--bdbg:#fbeeeb;--ec:#6b4fa8;--ecbg:#f1edf9;--pr:#1f5fbf;--prbg:#e9f1fc;--rs:#1b8a5a;--rsbg:#e8f6ef;
+--str:#1f6fd6;--strbg:#e6f0fc;--pol:#d97a12;--polbg:#fdf1e2;--mon:#1e9a52;--monbg:#e5f5eb;--acc:#5b6576;--accbg:#eef0f3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e141d;--card:#161e2a;--ink:#e6ebf2;--mut:#9aa6b6;--line:#2a3545;--navy:#9cc0f0;--bd:#f0a395;--bdbg:#36201c;--ec:#b9a2ef;--ecbg:#241d36;--pr:#8fb7f5;--prbg:#16263d;--rs:#6fd3a3;--rsbg:#13291f;--str:#7fb2f2;--strbg:#152a44;--pol:#f0ad5c;--polbg:#33240f;--mon:#6fd39a;--monbg:#122a1c;--acc:#b3bccb;--accbg:#232b37}}
+:root[data-theme="dark"]{--bg:#0e141d;--card:#161e2a;--ink:#e6ebf2;--mut:#9aa6b6;--line:#2a3545;--navy:#9cc0f0;--bd:#f0a395;--bdbg:#36201c;--ec:#b9a2ef;--ecbg:#241d36;--pr:#8fb7f5;--prbg:#16263d;--rs:#6fd3a3;--rsbg:#13291f;--str:#7fb2f2;--strbg:#152a44;--pol:#f0ad5c;--polbg:#33240f;--mon:#6fd39a;--monbg:#122a1c;--acc:#b3bccb;--accbg:#232b37}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 "IBM Plex Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif}
+.wrap{max-width:1320px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left))}
+h1{font-size:26px;margin:0 0 4px;line-height:1.3}
+.sub{color:var(--mut);margin:0 0 18px}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:4px solid}
+.rc.ec{border-top-color:var(--ec)}.rc.pr{border-top-color:var(--pr)}.rc.rs{border-top-color:var(--rs)}
+.rc h3{margin:0 0 4px;font-size:16px}.rc p{margin:0;color:var(--mut);font-size:14px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table.cmp{width:100%;border-collapse:collapse;min-width:900px;font-size:14px}
+.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}
+.cmp td+td,.cmp th+th{border-left:1px solid var(--line)}
+.cmp th{position:sticky;top:var(--navh,0px);background:var(--card);font-size:15px;z-index:2;box-shadow:inset 0 -1px 0 var(--line)}
+.tw{overflow:clip}@media (max-width:960px){.tw{overflow-x:auto}}
+.cmp th small{display:block;font-weight:400;font-size:12.5px;line-height:1.5;color:var(--mut);margin-top:4px}
+.cmp th.c0{width:10%}.cmp th.bd,.cmp th.ec,.cmp th.pr,.cmp th.rs{width:22.5%}.cmp th.bd{color:var(--bd);background:var(--bdbg)}
+.cmp th.ec{color:var(--ec);background:var(--ecbg)}.cmp th.pr{color:var(--pr);background:var(--prbg)}.cmp th.rs{color:var(--rs);background:var(--rsbg)}
+.cmp td.grp{font-weight:800;font-size:14.5px;padding:8px 12px}
+.grp.str{background:var(--strbg);color:var(--str)}.grp.pol{background:var(--polbg);color:var(--pol)}.grp.mon{background:var(--monbg);color:var(--mon)}.grp.acc{background:var(--accbg);color:var(--acc)}
+.cmp ul{margin:0;padding-left:16px}
+.dv{font-weight:800;color:#000}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dv{color:#fff}}:root[data-theme="dark"] .dv{color:#fff}
+.note{margin-top:16px;color:var(--mut);font-size:13.5px}
+@media (max-width:760px){.flow{grid-template-columns:1fr}}
+.cmp td.grp{font-size:16px}.grp .qno{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:13px;font-weight:800;margin-right:9px;vertical-align:middle}.grp.str .qno{background:var(--str)}.grp.pol .qno{background:var(--pol)}.grp.mon .qno{background:var(--mon)}.grp.acc .qno{background:#5B6576}
+
+nav.top{position:sticky;top:0;z-index:9;background:var(--card);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:4px;align-items:center;overflow-x:auto;padding-block:8px;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+.rtab{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:.88rem;padding:6px 14px;border-radius:999px;white-space:nowrap;color:var(--navy);border:1px solid var(--navy);text-decoration:none;font-weight:600}
+.rtab.active{background:var(--navy);color:#fff}
+a.rtab:hover{background:var(--navy);color:#fff}
+.gbtn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border-radius:999px;border:1px solid var(--navy);background:var(--card);color:var(--navy);cursor:pointer;margin-left:auto}
+.printbtn{margin-left:8px;flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:.86rem;font-weight:600;color:var(--navy);background:var(--card);border:1px solid var(--navy);border-radius:999px;padding:5px 14px;cursor:pointer;white-space:nowrap}
+.printbtn:hover,.gbtn:hover{background:var(--navy);color:#fff}
+dialog#gdlg{border:0;border-radius:14px;padding:0;max-width:min(920px,94vw);background:var(--card);color:var(--ink)}
+dialog#gdlg::backdrop{background:rgba(10,15,25,.55)}
+#gdlg .fbox{padding:22px 26px;position:relative}
+#gdlg .fclose{position:absolute;right:16px;top:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer;font:inherit}
+#gdlg .eyebrow{font-size:12px;color:var(--mut);letter-spacing:.06em}
+#gdlg h2{margin:2px 0 10px}
+.gtbl{width:100%;border-collapse:collapse;font-size:14px}.gtbl th,.gtbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}.gtbl th{background:var(--prbg)}.gnote{color:var(--mut);font-size:13px;margin:10px 0 0}
+@page{size:A4;margin:12mm}
+@media print{nav.top,dialog{display:none!important}body{background:#fff}.wrap{padding:0!important;max-width:none}.tw{border:0;overflow:visible}table.cmp{min-width:0;font-size:8.6pt}.cmp td,.cmp th{padding:2mm 2.5mm}.cmp td.grp{font-size:10.5pt}.cmp th{position:static}.cmp tr{break-inside:avoid}.cmp tr:has(td.grp){break-after:avoid}.flow{gap:3mm;margin-bottom:4mm}.rc{padding:2.5mm 3.5mm}.grp,.cmp th,.rc{-webkit-print-color-adjust:exact;print-color-adjust:exact}h1{font-size:15pt}}
+
+.eyebrow{font-size:13px;color:var(--mut);letter-spacing:.04em;margin-bottom:2px}
+h2{font-size:20px;margin:30px 0 12px}h2.sec{display:flex;align-items:center;gap:10px}
+h2 .qno{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--card);font-size:14px;font-weight:800}
+.h3{font-size:16px;margin:20px 0 10px}
+.exec{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:12px;padding:6px 22px 10px}
+.exec h2{margin:12px 0 6px;font-size:18px}.exec ol{margin:0 0 6px;padding-left:20px}.exec li{margin:6px 0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}.st b{display:block;font-size:28px;color:var(--navy);line-height:1.2}.st span{font-weight:700}.st small{display:block;color:var(--mut);font-size:12.5px;line-height:1.5;margin-top:2px}
+.note{color:var(--mut);font-size:13.5px;margin:10px 0 0}
+table.cmp{min-width:720px}.cmp td small{color:var(--mut)}
+.cmp th{position:static;box-shadow:none;background:var(--prbg);color:var(--navy)}
+.ok,.ng,.pa{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--monbg);color:var(--mon)}.ng{background:var(--bdbg);color:var(--bd)}.pa{background:var(--polbg);color:var(--pol)}
+.gaps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}.gap p{margin:4px 0 0;font-size:14px;color:var(--mut)}
+.gh{font-weight:700;display:flex;gap:8px;align-items:baseline}.gid{font-size:12px;font-weight:800;color:var(--bd);background:var(--bdbg);border-radius:6px;padding:1px 7px}
+.lv{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;color:#fff;font-weight:800;font-size:12.5px;margin-right:8px;vertical-align:1px}.lv.a{background:var(--bd)}.lv.b{background:var(--pol)}.lv.c{background:var(--mon)}
+.lines{display:grid;gap:10px}
+.ln{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;border-left:5px solid}.ln.cmd{border-left-color:var(--bd)}.ln.fun{border-left-color:var(--pr)}.ln.rep{border-left-color:var(--mon)}
+.lt{font-weight:700;margin-bottom:6px}.ln p{margin:6px 0 0;font-size:14px;color:var(--mut)}
+.flow3{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.flow3 span{border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:14px;background:var(--bg)}.flow3 span.hl{border-color:var(--bd);color:var(--bd);font-weight:700}.flow3 i{font-style:normal;color:var(--mut)}
+.pts{margin:0;padding-left:20px}.pts li{margin:6px 0}
+@media (max-width:760px){.stats,.gaps{grid-template-columns:1fr 1fr}}@media (max-width:520px){.stats,.gaps{grid-template-columns:1fr}}
+@media print{nav.top,dialog{display:none!important}body{background:#fff;font-size:10pt}.wrap{padding:0!important;max-width:none}.tw{border:0;overflow:visible}table.cmp{min-width:0;font-size:9pt}.cmp tr,.gap,.ln,.st,.exec{break-inside:avoid}h2{break-after:avoid;margin-top:16px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<nav class="top" aria-label="สารบัญ"><div class="wrap">
+  <a class="rtab" href="./">President &amp; Group COO</a>
+  <a class="rtab cmpl" href="compare.html">เปรียบเทียบ 4 บทบาท</a>
+  <span class="rtab active" aria-current="page">กำกับบริษัทย่อย</span>
+  <button type="button" class="gbtn" id="gopen" data-gopen title="คำกริยา (Decision Rights Glossary)" aria-label="เปิด Decision Rights Glossary"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h7M9 11.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <button type="button" class="printbtn" id="printbtn"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 9V3h10v6M7 18H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>พิมพ์ / PDF</button>
+</div></nav>
+<div class="wrap">
+<div class="eyebrow">Executive Briefing · สำหรับ President และ Chair of Executive Committee</div>
+<h1>โครงสร้างกำกับดูแลบริษัทย่อย</h1>
+<p class="sub">ทบทวนกลไกที่ PCC ใช้กำกับบริษัทย่อย จากโครงสร้างธุรกิจและตารางอำนาจอนุมัติ (Cor-DOA และ Com-DOA) เทียบกับแนวทาง Holding Company แบบ Berkshire Hathaway</p>
+
+<section class="exec">
+<h2>ข้อสรุป</h2>
+<ol>
+<li><b>ฐานแข็งแรงอยู่แล้ว:</b> Cor-DOA กำหนดให้ PCC ใช้อำนาจผ่านมติบอร์ดบริษัทย่อย มีลำดับชั้นชัดเจน (Cor-DOA อยู่เหนือ Com-DOA) และมีช่องทางให้เงินไหลกลับมาที่ Holding</li>
+<li><b>จุดอ่อนอยู่ที่ "วิธีสั่งการ" ไม่ใช่ "ใครอนุมัติ":</b> ยังไม่มีขั้นตอนว่าเรื่องเดินจาก PCC ไปถึงบอร์ดบริษัทย่อยอย่างไร กรรมการที่ PCC ส่งไปยังไม่มีแนวทางรับมติก่อนลงคะแนน และ PCC ยังอนุมัติงานประจำบางเรื่องของบริษัทย่อยเอง ซึ่งขัดหลัก Berkshire</li>
+<li><b>ข้อเสนอ:</b> แบ่งเรื่องเป็น 3 ระดับ (Owner-reserved / Parent-cleared / Subsidiary-decided) แยกสายสื่อสารเป็น 3 สาย และเขียนลงในนโยบายการกำกับดูแลบริษัทย่อยกับ Cor-DOA รอบถัดไป</li>
+</ol>
+</section>
+
+<h2 class="sec"><span class="qno">1</span>โครงสร้างกลุ่มในปัจจุบัน</h2>
+<div class="stats">
+<div class="st"><b>3</b><span>Revenue Stream</span><small>Smart Grid Digitalization (3 สายย่อย) · Bamboo Supply Chain · Digital, AI &amp; Automation</small></div>
+<div class="st"><b>5</b><span>Parent Company</span><small>บริษัทที่ PCC ถือหุ้นโดยตรง เป็นหัวของแต่ละสายธุรกิจ</small></div>
+<div class="st"><b>10</b><span>Subsidiary Company</span><small>ถือผ่าน Parent Company อีกชั้นหนึ่ง</small></div>
+<div class="st"><b>3 + 1</b><span>JV · Associate</span><small>กิจการร่วมค้า 3 แห่ง และบริษัทร่วม 1 แห่ง</small></div>
+</div>
+<p class="note">โครงสร้างเป็น 3 ชั้น คือ PCC → Parent Company → Subsidiary ทำให้มีบอร์ดที่ต้องกำกับรวม 15 ชุด และกรรมการที่ PCC ส่งไปจะมีผลต่อการควบคุมมากกว่าการสั่งงานตามสายบังคับบัญชา</p>
+
+<h2 class="sec"><span class="qno">2</span>หลัก Berkshire เทียบกับ PCC วันนี้</h2>
+<div class="tw"><table class="cmp">
+<tr><th style="width:24%">หลัก Holding Company (Berkshire)</th><th style="width:44%">PCC วันนี้ (หลักฐานจาก DOA)</th><th style="width:12%">สถานะ</th><th>หมายเหตุ</th></tr>
+<tr><td><b>Holding เป็นเจ้าของ ไม่ใช่ผู้ดำเนินงาน</b><br><small>งานขายและผลิตทั้งหมดทำผ่าน Operating Company</small></td><td>ธุรกรรมขาย ประมูล และจัดซื้อของบริษัทย่อยใช้ Com-DOA ของบริษัทย่อยเอง (Cor-DOA ข้อ 3.1, 18, 19)</td><td><span class="ok">สอดคล้อง</span></td><td></td></tr>
+<tr><td><b>Holding ถือกุญแจการจัดสรรทุน</b><br><small>ทุน หนี้ การลงทุน ปันผล ตัดสินที่ Holding</small></td><td>งบลงทุน เงินกู้ ค้ำประกัน ตั้งหรือเลิกบริษัท และปันผลของบริษัทย่อย ต้องผ่าน EC หรือ Board PCC (ข้อ 1, 2.2, 7, 11)</td><td><span class="ok">สอดคล้อง</span></td><td></td></tr>
+<tr><td><b>เงินไหลกลับมาที่ Holding</b><br><small>ปันผล ดอกเบี้ย ค่าเช่า ค่าบริการ</small></td><td>มีหมวด Other Revenues: Leasing, Lending, Dividend, Management Charge (ข้อ 3.1.7)</td><td><span class="ok">สอดคล้อง</span></td><td></td></tr>
+<tr><td><b>เลือก CEO ที่ไว้ใจได้ แล้วให้อิสระในงานประจำ</b></td><td>EC อนุมัติโครงสร้างองค์กร แผนอัตรากำลัง ปฏิทินวันหยุด และ EBS ของบริษัทย่อย และ CEO ของ PCC อนุมัติจ่ายเงินเดือนระดับสูงของบริษัทย่อย (ข้อ 13.1, 16.2, 16.7, 16.8, 16.10)</td><td><span class="ng">ขัดหลัก</span></td><td>Holding ลงไปในงานประจำ ความรับผิดชอบของ CEO-RS จึงไม่ชัด</td></tr>
+<tr><td><b>แยกนิติบุคคลให้ชัด</b><br><small>กัน Holding จากภาระของ OpCo (piercing the corporate veil)</small></td><td>รายการระหว่างกันมีเกณฑ์ (ข้อ 4) แต่ยังไม่มีแนวทางว่าผู้บริหาร PCC สั่งงานพนักงานบริษัทย่อยโดยตรงได้หรือไม่</td><td><span class="pa">บางส่วน</span></td><td>ต้องแยกให้ชัดว่าสายสั่งการกับสายงานต่างกันอย่างไร</td></tr>
+<tr><td><b>กำกับผ่านบอร์ด ไม่ผ่านตัวบุคคล</b></td><td>ข้อบังคับบริษัทย่อยต้องครอบคลุมการตั้งกรรมการ การลงคะแนนของกรรมการที่ PCC ส่งไป และการลงคะแนนในที่ประชุมผู้ถือหุ้นบริษัทย่อย (ข้อ 6.1.2) แต่ยังไม่มีขั้นตอนรับแนวทางลงมติ</td><td><span class="pa">บางส่วน</span></td><td>มีหลัก แต่ยังไม่มีวิธีปฏิบัติ</td></tr>
+</table></div>
+
+<h2 class="sec"><span class="qno">3</span>จุดบกพร่องที่พบ</h2>
+<div class="gaps">
+<div class="gap"><div class="gh"><span class="gid">G1</span>ไม่มีขั้นตอนสั่งการจาก PCC ถึงบอร์ดบริษัทย่อย</div><p>DOA บอกว่าใคร "ห" และใคร "อ" แต่ไม่บอกว่าใครนำเรื่องไป และกรรมการที่ PCC ส่งไปต้องลงคะแนนตามอะไร ในทางปฏิบัติจึงสั่งผ่านตัวบุคคลและผ่านการพูดคุย ซึ่งตรวจสอบย้อนหลังไม่ได้</p></div>
+<div class="gap"><div class="gh"><span class="gid">G2</span>ทิศทางอนุมัติมี 2 แบบโดยไม่มีหลักกำกับ</div><p>บางเรื่อง EC "ห" ก่อนแล้วบอร์ดลูก "อ" (เช่น งบประมาณและเงินกู้ ข้อ 1.1, 2.2) บางเรื่องบอร์ดลูก "ห" ก่อนแล้วส่งขึ้น EC และ Board PCC (เช่น ข้อ 3.2.1, 15.2) ผู้ปฏิบัติจึงต้องจำเป็นรายข้อ</p></div>
+<div class="gap"><div class="gh"><span class="gid">G3</span>PCC อนุมัติงานประจำของบริษัทย่อย</div><p>อัตรากำลัง วันหยุด EBS และโครงสร้างองค์กรของบริษัทย่อยไปจบที่ EC หรือ CEO ของ PCC ขัดหลัก Berkshire ที่ให้ Holding คุมทุนและคน แต่ปล่อยงานประจำให้ CEO ของบริษัทลูก</p></div>
+<div class="gap"><div class="gh"><span class="gid">G4</span>EC ไม่อยู่ในสายอนุมัติกลยุทธ์บริษัทย่อย</div><p>Cor-DOA ข้อ 12.2.2 ให้แผนระยะที่ 2 ของบริษัทย่อยจบที่บอร์ดลูก โดย Board PCC รับทราบเท่านั้น ไม่มี EC "ห" ขณะที่บทบาทที่ตกลงกันไว้คือ EC ต้อง Review ก่อนบอร์ดลูกอนุมัติ</p></div>
+<div class="gap"><div class="gh"><span class="gid">G5</span>ผู้เสนอ Corporate Strategy ไม่ตรงกับ JD</div><p>Cor-DOA ข้อ 12.1.1 ให้ CEO (Chair of EC) เป็นผู้ "ส" แต่ JD ของ President ให้ President เป็นผู้ Propose ต่อ EC ต้องปรับให้ตรงกันก่อนเผยแพร่ JD</p></div>
+<div class="gap"><div class="gh"><span class="gid">G6</span>บอร์ดบริษัทย่อยกำกับตัวเอง</div><p>กรรมการบริษัทย่อยส่วนใหญ่คือผู้บริหารของบริษัทนั้นเอง (CEO-RS, COO, CFO, CTO) บอร์ดจึงตรวจงานที่ตัวเองทำ และกรรมการมีหน้าที่ 2 ทางที่อาจขัดกัน คือซื่อสัตย์ต่อบริษัทย่อย และรับคำสั่งจาก PCC</p></div>
+</div>
+
+<h2 class="sec"><span class="qno">4</span>โครงสร้างที่ควรเป็น</h2>
+<h3 class="h3">4.1 แบ่งเรื่องเป็น 3 ระดับ</h3>
+<div class="tw"><table class="cmp">
+<tr><th style="width:20%">ระดับ</th><th style="width:22%">ใครตัดสิน</th><th>เรื่องตาม Cor-DOA</th></tr>
+<tr><td><span class="lv a">A</span><b>Owner-reserved</b><br><small>เรื่องของเจ้าของ</small></td><td>บอร์ดลูกเสนอ → EC → <b>Board PCC</b> (หรือผู้ถือหุ้น)</td><td>ตั้งหรือเลิกบริษัท เพิ่มหรือลดทุน (11) · แต่งตั้งกรรมการบริษัทย่อย (5.3) · ปันผล (7) · แก้ข้อบังคับเรื่องสำคัญ (6.1.2) · รายการเกี่ยวโยงขนาดใหญ่ (4) · ลงทุนหรือกู้เกินวงเงินของ EC</td></tr>
+<tr><td><span class="lv b">B</span><b>Parent-cleared</b><br><small>PCC เห็นชอบก่อน</small></td><td><b>EC "ห"</b> → บอร์ดลูก "อ"</td><td>งบประมาณประจำปีและกลยุทธ์บริษัทย่อย (1.1, 12.2.2) · กู้และค้ำประกันภายในวงเงิน (2.2) · ประมูลมูลค่าสูง (3.1.2, 3.1.4) · JV และ Consortium (17.3)</td></tr>
+<tr><td><span class="lv c">C</span><b>Subsidiary-decided</b><br><small>บริษัทย่อยตัดสินเอง</small></td><td>บอร์ดลูก / CEO-RS ตาม <b>Com-DOA</b> แล้วรายงานผ่าน Platform</td><td>ขายและจัดซื้อภายในงบ · อัตรากำลัง วันหยุด EBS · โครงสร้างองค์กรใต้ระดับ C-Level · ค่าใช้จ่ายดำเนินงาน</td></tr>
+</table></div>
+
+<h3 class="h3">4.2 แยกสายสื่อสารเป็น 3 สาย</h3>
+<div class="lines">
+<div class="ln cmd"><div class="lt">สายสั่งการ (Command)</div><div class="flow3"><span>Board PCC</span><i>→</i><span>EC</span><i>→</i><span>EC Member ที่นั่งบอร์ดลูก + CEO-RS</span><i>→</i><span class="hl">มติบอร์ดบริษัทย่อย</span><i>→</i><span>CEO-RS / MD</span></div><p>ใช้กับเรื่องระดับ A และ B เท่านั้น มีผลผูกพันเมื่อบอร์ดลูกลงมติแล้ว</p></div>
+<div class="ln fun"><div class="lt">สายงาน (Functional)</div><div class="flow3"><span>President / VP ของ PCC</span><i>↔</i><span>CFO · CTO · CSO ของบริษัทย่อย</span></div><p>ใช้วางมาตรฐาน Platform และขอข้อมูล <b>ไม่ใช่สั่งงาน</b> ถ้าเห็นไม่ตรงกัน ให้ยกขึ้นผ่าน CEO-RS หรือ EC</p></div>
+<div class="ln rep"><div class="lt">สายรายงาน (Reporting)</div><div class="flow3"><span>บริษัทย่อย</span><i>→</i><span>Governance Platform</span><i>→</i><span>President</span><i>→</i><span>EC</span><i>→</i><span>Board PCC</span></div><p>Planned vs Actual และ Exception Report รูปแบบเดียวกันทุกบริษัท</p></div>
+</div>
+
+<h3 class="h3">4.3 แนวทางสำหรับกรรมการที่ PCC ส่งไป (Nominee Director)</h3>
+<ul class="pts">
+<li><b>องค์ประกอบ:</b> บอร์ดบริษัทย่อยแต่ละชุดมี EC Member หรือผู้บริหาร PCC ที่ไม่ได้บริหารงานประจำในบริษัทนั้นอย่างน้อย 1 คน และประธานไม่ควรเป็นผู้บริหารของบริษัทนั้นเอง</li>
+<li><b>ก่อนประชุม:</b> เรื่องระดับ A และ B ต้องได้แนวทางลงมติจาก EC ก่อน โดย CEO-RS เป็นผู้นำเรื่องเข้า EC</li>
+<li><b>ระหว่างประชุม:</b> ลงมติตามแนวทางของ EC โดยยังคำนึงถึงประโยชน์ของบริษัทย่อยตามหน้าที่กรรมการ ถ้าเห็นต่าง ให้บันทึกเหตุผลไว้ในรายงานการประชุม</li>
+<li><b>หลังประชุม:</b> รายงานมติกลับ EC ผ่าน Platform ภายในรอบที่กำหนด</li>
+</ul>
+
+<h2 class="sec"><span class="qno">5</span>สิ่งที่ขอให้ตัดสินใจ</h2>
+<div class="tw"><table class="cmp">
+<tr><th style="width:5%">#</th><th style="width:42%">ข้อเสนอ</th><th style="width:20%">เอกสารที่ต้องแก้</th><th style="width:13%">แก้จุด</th><th>ผู้อนุมัติ</th></tr>
+<tr><td>1</td><td>รับหลักแบ่งเรื่อง 3 ระดับ (A / B / C) และใช้ทิศทางอนุมัติแบบเดียวกันในแต่ละระดับ</td><td>Cor-DOA รอบทบทวนถัดไป</td><td>G2</td><td>Board PCC (EC ห, AC สทก)</td></tr>
+<tr><td>2</td><td>เขียนขั้นตอนสายสั่งการ 3 สาย และแนวทาง Nominee Director ลงนโยบาย</td><td>นโยบายการกำกับดูแลการดำเนินงานของบริษัทย่อยและบริษัทร่วม</td><td>G1, G6</td><td>Board PCC</td></tr>
+<tr><td>3</td><td>ย้ายอำนาจอนุมัติงานประจำของบริษัทย่อย ได้แก่ อัตรากำลัง วันหยุด EBS และโครงสร้างใต้ C-Level ไปที่บอร์ดลูกหรือ CEO-RS โดย EC รับทราบ</td><td>Cor-DOA ข้อ 13.1, 16.2, 16.7, 16.10</td><td>G3</td><td>Board PCC</td></tr>
+<tr><td>4</td><td>เพิ่ม EC "ห" ในการอนุมัติกลยุทธ์บริษัทย่อย (แผนระยะที่ 2)</td><td>Cor-DOA ข้อ 12.2.2</td><td>G4</td><td>Board PCC</td></tr>
+<tr><td>5</td><td>กำหนดผู้เสนอ Corporate Strategy ให้ตรงกัน ระหว่าง CEO (Chair of EC) หรือ President</td><td>Cor-DOA ข้อ 12.1.1 / JD President</td><td>G5</td><td>Chair of EC ตัดสินก่อน</td></tr>
+<tr><td>6</td><td>ทบทวนองค์ประกอบบอร์ดบริษัทย่อยทุกชุดให้ตรงข้อ 4.3</td><td>มติแต่งตั้งกรรมการ (Cor-DOA ข้อ 5.3)</td><td>G6</td><td>Board PCC (NRC ห)</td></tr>
+</table></div>
+<p class="note">ที่มา: โครงสร้างธุรกิจ PCC · Corporate DOA (มีผล 11 ส.ค. 2569) · Company DOA ของ PCC, PEM, PDE และ PSL · How to Form a Holding Company (Berkshire Hathaway) · หน้านี้อ้างเลขข้อของ DOA เท่านั้น ไม่ได้แสดงวงเงินและชื่อบุคคล</p>
+</div>
+
+<dialog id="gdlg" class="fdlg" aria-labelledby="g-title"><div class="fbox"><button class="fclose" id="gclose">ปิด</button><div class="sec-head" style="margin-bottom:10px"><span class="eyebrow">หลักการใช้คำกริยา</span><h2 id="g-title">Decision Rights Glossary</h2></div><div style="overflow-x:auto"><table class="gtbl"><thead><tr><th>Keyword</th><th>คำไทย</th><th>ความหมาย</th></tr></thead><tbody><tr><td><b class="dv">Determine</b></td><td>กำหนดทิศทาง</td><td>กำหนดทิศทาง เป้าหมาย หรือหลักการระดับองค์กร (ใช้กับอำนาจของ Board)</td></tr><tr><td><b class="dv">Set</b></td><td>กำหนด</td><td>กำหนดมาตรฐาน รูปแบบ หรือเกณฑ์การทำงานภายใต้กรอบที่ได้รับ</td></tr><tr><td><b class="dv">Approve</b></td><td>อนุมัติ</td><td>อนุมัติภายใต้อำนาจที่กำหนด</td></tr><tr><td><b class="dv">Oversee</b></td><td>กำกับดูแล</td><td>กำกับดูแลผลและความเหมาะสมโดยไม่ลงมือบริหารประจำ</td></tr><tr><td><b class="dv">Monitor</b></td><td>ติดตาม</td><td>ติดตามข้อมูลและความก้าวหน้า</td></tr><tr><td><b class="dv">Review</b></td><td>ทบทวน</td><td>พิจารณาประเมินความครบถ้วนและความเหมาะสม</td></tr><tr><td><b class="dv">Recommend</b></td><td>ให้ความเห็น</td><td>วิเคราะห์และให้ความเห็นหรือข้อแนะนำ ประกอบการตัดสินใจของผู้มีอำนาจ (ไม่ใช่การขออนุมัติ)</td></tr><tr><td><b class="dv">Draft</b></td><td>จัดทำร่าง</td><td>จัดทำร่างเอกสาร แผน หรือนโยบาย เพื่อเข้าสู่ขั้นตอนอนุมัติ</td></tr><tr><td><b class="dv">Verify</b></td><td>ตรวจสอบยืนยัน</td><td>ตรวจสอบยืนยันความถูกต้องของข้อมูล ตัวเลข และความครบถ้วน ก่อนเสนอหรืออนุมัติ</td></tr><tr><td><b class="dv">Propose</b></td><td>เสนอ</td><td>เสนอเรื่องอย่างเป็นทางการต่อผู้มีอำนาจ เพื่อขออนุมัติ</td></tr><tr><td><b class="dv">Develop</b></td><td>พัฒนา</td><td>ออกแบบหรือจัดทำแนวทางและแผนงาน</td></tr><tr><td><b class="dv">Implement</b></td><td>ดำเนินการ</td><td>นำแผน นโยบาย มาตรฐาน หรือระบบไปใช้ให้เกิดผลทั่วทั้งองค์กร</td></tr><tr><td><b class="dv">Execute</b></td><td>ปฏิบัติงาน</td><td>ดำเนินงานและตัดสินใจเชิงปฏิบัติภายใต้อำนาจที่ได้รับมอบ (DOA)</td></tr><tr><td><b class="dv">Report</b></td><td>รายงาน</td><td>รายงานผลและความคืบหน้าตามรูปแบบและรอบที่กำหนด</td></tr><tr><td><b class="dv">Escalate</b></td><td>เสนอเรื่องขึ้นให้ผู้มีอำนาจตัดสินใจ</td><td>ส่งเรื่องที่เกินอำนาจหรือมีความเสี่ยงสำคัญขึ้นสู่ผู้มีอำนาจเพื่อตัดสินใจทันที โดยไม่รอรอบรายงาน</td></tr></tbody></table></div><p class="gnote"><b>ลำดับมาตรฐาน:</b> Draft → Verify → Propose → Review → Approve → Implement → Report → Review</p><p class="gnote">President ใช้ <b class="dv">Set</b> ส่วน <b class="dv">Determine</b> สงวนไว้สำหรับ Board of Directors<br>Keyword คำกริยาในบทบาทหน้าที่ใช้ภาษาอังกฤษ (<b class="dv">ตัวหนาสีดำ</b>) ตามความหมายในตารางนี้</p></div></dialog>
+<script>
+(()=>{const g=document.getElementById('gdlg');document.addEventListener('click',e=>{const b=e.target.closest('[data-gopen]');if(b){e.preventDefault();g.showModal()}});document.getElementById('gclose').addEventListener('click',()=>g.close());g.addEventListener('click',e=>{if(e.target===g)g.close()});
+let dl=null;try{if(window.claude&&claude.use)claude.use('downloads').then(d=>{dl=d}).catch(()=>{})}catch(e){}
+document.getElementById('printbtn').addEventListener('click',async()=>{if(dl){try{const r=await fetch('governance.pdf');if(!r.ok)throw 0;await dl.save({filename:'Subsidiary Governance Briefing.pdf',data:await r.blob()})}catch(e){}return}window.print()})})();
+</script>
+</body></html>
